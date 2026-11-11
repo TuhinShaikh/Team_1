@@ -1,0 +1,10 @@
+rank_bm25
+numpy
+voyageai
+pytest
+uvicorn
+FastAPI
+httpx
+chromadb
+anthropic
+

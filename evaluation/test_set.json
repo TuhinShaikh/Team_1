@@ -1,0 +1,14 @@
+[
+  {"id": "S1", "question": "Have we moved a hospital's patient records to the cloud?", "expected": ["case-799"], "coverage": "Supplied sample; plain language"},
+  {"id": "S2", "question": "Have we helped a client turn its back office into a business it can sell or share?", "expected": ["case-322", "case-455"], "coverage": "Supplied sample; jargon; multiple expected matches"},
+  {"id": "S3", "question": "A bank needs to rewrite thousands of old validation rules. Have we used AI to do something similar?", "expected": ["case-746"], "coverage": "Cross-industry: banking to fisheries; jargon"},
+  {"id": "S4", "question": "Have we helped a company replace its old HR system and understand its workforce better?", "expected": ["case-883"], "coverage": "Non-English source: Portuguese"},
+  {"id": "S5", "question": "Have we helped a retailer answer routine customer questions with AI and pass difficult ones to a person?", "expected": ["case-678"], "coverage": "Jargon"},
+  {"id": "S6", "question": "Have we measured how much time staff can save using AI for meeting notes, presentations and proposals?", "expected": ["case-228"], "coverage": "Jargon"},
+  {"id": "D1", "question": "A food factory wants to understand why its machines stop. Have we tracked downtime automatically elsewhere?", "expected": ["case-323"], "coverage": "Cross-industry: food manufacturing to mining; jargon"},
+  {"id": "D2", "question": "Have we replaced a bank's core transaction system in the cloud while keeping disruption to customers low?", "expected": ["case-845"], "coverage": "Jargon"},
+  {"id": "D3", "question": "Have we brought a merged company's customer information together and helped call-centre staff resolve issues without transfers?", "expected": ["case-302"], "coverage": "Jargon"},
+  {"id": "D4", "question": "Have we improved tracking of equipment going to data centres and removed manual supply-chain processes?", "expected": ["case-557"], "coverage": "Plain language"},
+  {"id": "D5", "question": "Have we helped a global company consolidate many separate finance and operations systems into a small number of cloud platforms?", "expected": ["case-142"], "coverage": "Non-English source: Indonesian; ongoing programme"},
+  {"id": "D6", "question": "Have we built flight-control software for an autonomous spacecraft landing on Mars?", "expected": [], "coverage": "No match"}
+]
