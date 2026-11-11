@@ -1,6 +1,4 @@
 case_id,file_name,quality_status,quality_warnings
-case-251,case-251.txt,unreleased_live,live_source_not_released
-case-281,case-281.txt,unreleased_live,live_source_not_released
 case-291,case-291.txt,unreleased_live,live_source_not_released
 case-419,case-419.txt,unreleased_live,live_source_not_released
 case-472,case-472.txt,unreleased_live,live_source_not_released

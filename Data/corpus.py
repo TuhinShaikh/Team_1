@@ -59,6 +59,24 @@ CORPUS: list[dict[str, Any]] = [
         "round": "Main"
     },
     {
+        "document": "case-251",
+        "case_id": "case-251",
+        "language": "Italian",
+        "body": "Poste Italiane è passata da operatore postale e di pacchi alla più grande piattaforma phygital d'Italia. Con Veridane ha ricostruito il proprio digital core (infrastruttura cloud-ready, migrazione di centinaia di applicazioni critiche e operations unificate su SAP S/4HANA su Microsoft Azure) e ha introdotto un'architettura data mesh per decisioni più rapide e personalizzate. La SuperApp unisce servizi bancari, assicurativi e logistici (prima app finanziaria in Italia, oltre 3,3 miliardi di interazioni l'anno); Poste Energia è diventata il terzo fornitore di energia del Paese in tre anni; il Progetto Polis trasforma circa 7.000 uffici postali in hub digitali per i servizi pubblici. Ora si integrano assistenti AI, agenti per il personale degli uffici e computer vision nella logistica.",
+        "source_file": "C:\\Users\\tuhin\\Desktop\\Documents\\Personal\\SpartaEducation\\TEAM_1\\Team_1\\Data\\Cleaned_data\\case-251.txt",
+        "delivery": "Poste Italiane – Postal Service to Platform Powerhouse",
+        "round": "Live"
+    },
+    {
+        "document": "case-281",
+        "case_id": "case-281",
+        "language": "Industry jargon",
+        "body": "Marriott International worked with Veridane and Oracle to replace a fragmented, multi-vendor HR landscape with mHUB, a global HCM platform on Oracle Fusion Cloud and one of the largest Oracle Cloud HCM implementations (14 Oracle technologies, 10 HCM modules). Veridane led technology enablement while Marriott led training and change management. mHUB delivers employee self-service, learning, internal mobility and AI-powered real-time workforce analytics in 15 languages across diverse regulatory regimes, and integrates a new US ESPP. KPIs: 18M+ courses completed, 6M candidates searchable and 200K+ new hires onboarded across 31 brands, 8,600 properties and 139 countries.",
+        "source_file": "C:\\Users\\tuhin\\Desktop\\Documents\\Personal\\SpartaEducation\\TEAM_1\\Team_1\\Data\\Cleaned_data\\case-281.txt",
+        "delivery": "Marriott International – mHUB Global HR Hub",
+        "round": "Live"
+    },
+    {
         "document": "case-302",
         "case_id": "case-302",
         "language": "Industry jargon",
