@@ -8,7 +8,9 @@ from corpus import DOCUMENTS
 import agent_settings as agent 
 from pydantic import BaseModel
 
+
 import llm 
+
 
 router = APIRouter(prefix = "/endpoints", tags=["endpoints"])
 
@@ -55,7 +57,7 @@ def ask(req: AskRequest):
 def get_case_or_404(case_id: str) -> dict:
     for document in DOCUMENTS:
         if document["case_id"] == case_id:
-            return document["body"]
+            return document
     raise HTTPException(status_code=404, detail=f"No case with id {case_id}")
 
 @router.get("/{case_id}")
