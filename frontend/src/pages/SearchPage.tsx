@@ -74,11 +74,11 @@ export default function SearchPage() {
   return (
     <main className="app">
       <header>
-        <p className="eyebrow">PAST WORK. NEW POSSIBILITIES.</p>
-
+        <p className="eyebrow"><span className="eyebrow-dot" /> PAST WORK. NEW POSSIBILITIES.</p>
+        <h1>Find the work<br /><span>that moves you forward.</span></h1>
 
         <p className="intro">
-          Describe your client's challenge to find relevant past projects.
+          Describe your client’s challenge. Discover proven experience, ideas and outcomes from across the project library.
         </p>
       </header>
 
