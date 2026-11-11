@@ -33,7 +33,6 @@ def build_corpus(cleaned_dir: Path, manifest_path: Path, output_path: Path) -> i
                 "case_id": row["case_id"],
                 "language": row.get("version_given", ""),
                 "body": file_path.read_text(encoding="utf-8").strip(),
-                "source_file": row["cleaned_file"],
                 "delivery": row.get("delivery", ""),
                 "round": row.get("round", ""),
             }
