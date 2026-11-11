@@ -50,13 +50,36 @@ SYSTEM_PROMPT = (
 #this function is too build the prompt used to summarise fund fact sheets by fund id 
 def build_prompt( fund_factsheet:dict) -> str:
     return (
-        f"Summarise this investment fund factsheet for a portfolio manager in formal yet fun way"
-        f"Name: {fund_factsheet["title"]} "
-        f"Body:{fund_factsheet["body"]} "
+        f"Analyse this sales case , in concise and comprehensive manner"
+        f"Body:{["body"]} "
     )
 
 #
 
 
 
+class CaseAnalysis(BaseModel):
+    """validation- The shape we require back,it is not suggestion to model ,it is a contract""" 
+    Observations: list[str] = Field(max_length=5)
+    OverallAssesment: list[str] = Field(max_length=3)
 
+
+def analyse_case(case: dict) -> dict:
+    """Structured output. The response is validated against the FirmAnalsyis... or it fails """
+    response = client.messages.parse(
+        model=MODEL,
+        max_tokens=600,
+        system=SYSTEM_PROMPT,
+        messages=[{"role": "user", "content": build_prompt(case)}],
+        output_format= CaseAnalysis, 
+    )
+
+    #not free text returned ?based on schema 
+    analysis = response.content[0].parsed_output
+
+    return {
+        "analysis": analysis,
+        "input_tokens": response.usage.input_tokens,
+        "output_tokens": response.usage.output_tokens,
+        "stop_reason": response.stop_reason,
+    }
