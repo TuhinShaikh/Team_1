@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.cache/
+.env
+.DS_Store
+__MACOSX/
+*.code-workspace
+Claude outputs/
