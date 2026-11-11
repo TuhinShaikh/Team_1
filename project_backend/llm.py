@@ -38,7 +38,7 @@ client = anthropic.Anthropic(
 #RULES GO IN SYSTEM
 #DATA GOES IN USER 
 
-#-----------------------LLM summmary for summary of fund fact sheets---------------------------------------------------------------------
+#-----------------------LLM s---------------------------------------------------------------------
 
 SYSTEM_PROMPT = (
     "You are a helpfull . "
@@ -54,7 +54,6 @@ def build_prompt( fund_factsheet:dict) -> str:
         f"Name: {fund_factsheet["title"]} "
         f"Body:{fund_factsheet["body"]} "
     )
-
 
 #
 
