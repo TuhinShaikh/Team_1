@@ -7,7 +7,6 @@ from fastapi import APIRouter, HTTPException
 from corpus import DOCUMENTS
 
 
-
 router = APIRouter(prefix = "/endpoints", tags=["endpoints"])
 
 
