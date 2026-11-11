@@ -17,6 +17,8 @@ Kept by Ahmad (Evidence and Demo Lead). One line per decision, problem or milest
 
 11:45 – Corpus record format confirmed. Each record has case ID, language, body text, source file, delivery name and round. Screenshot:11:45 – Corpus record format confirmed. Each record has case ID, language, body text, source file, delivery name and round. Screenshot: <img width="1290" height="643" alt="image" src="https://github.com/user-attachments/assets/7f1aba4c-5f60-47bf-a063-1caa9898861c" />
 
+11:56 – Backend running. Ashar built the backend, which serves the corpus records from Tuhin’s pipeline (/endpoints/documents). Tuhin’s and Ashar’s work now connected. Screenshot: <img width="1490" height="749" alt="image" src="https://github.com/user-attachments/assets/50dd4012-e5d5-4c37-9873-212702f71311" />
+
 
 **__:__ – Data issue found in corpus zip.** `lynceus_main_0930.zip` contains 30 case files plus 30 hidden Mac files (`__MACOSX/._case-*.txt`). The loader needs to skip these, because they are not real entries. Corpus not edited by hand.
 
