@@ -1,0 +1,40 @@
+case_id,file_name,source_file,cleaned_file,delivery,round,version_given,character_count,word_count,sha256,quality_status,quality_warnings
+case-142,case-142.txt,Data\Original_data\case-142.txt,Data\Cleaned_data\case-142.txt,Johnson Controls – 175 ERPs to Two Cloud Platforms,Main,Indonesian,608,80,c6d25fad8653414acc3be754ce238c4579cf61e02bebcde67d627411538f49da,pass,
+case-185,case-185.txt,Data\Original_data\case-185.txt,Data\Cleaned_data\case-185.txt,Blueriq – Software Products Rebuilt as Cloud Services,Main,Dutch,664,82,e5ff592ac1b2fab6d4b3c1dd5baffdf7bd283862722b7349d8f94c6f0178594b,pass,
+case-195,case-195.txt,Data\Original_data\case-195.txt,Data\Cleaned_data\case-195.txt,AXA Belgium – Claims in the Cloud,Main,French,795,131,9fc816c61dc3de246ec3df7e88075e008dea47e19c0216332cae180c88bcfee1,pass,
+case-209,case-209.txt,Data\Original_data\case-209.txt,Data\Cleaned_data\case-209.txt,UMass Memorial Health – Unified Data Platform,Main,Plain language,647,100,177ab23b31c0125175921d579d321fa1a5c750d314c30e115383c896710a9cd0,pass,
+case-228,case-228.txt,Data\Original_data\case-228.txt,Data\Cleaned_data\case-228.txt,Repsol – Copilot-Powered Workforce,Main,Industry jargon,676,95,2681bcac149f87e0d28b49dc3d309d35d2583ae72ebc254fc24337dc1d5b2c51,pass,
+case-245,case-245.txt,Data\Original_data\case-245.txt,Data\Cleaned_data\case-245.txt,"Murata – AI-Led ""Never-Stopping Factory""",Main,Japanese,343,4,45cdc32e8b10752c97c8250294ff0265873c62566132f54505735ef324d70a59,warn,short_text
+case-302,case-302.txt,Data\Original_data\case-302.txt,Data\Cleaned_data\case-302.txt,VM02 AI-Powered Customer Experience,Main,Industry jargon,538,84,fabdb5f75939c4d389ed58da13f98153a73a34ccd6b69816d11a9d120f6320e6,pass,
+case-322,case-322.txt,Data\Original_data\case-322.txt,Data\Cleaned_data\case-322.txt,Vodafone Transformation,Main,Industry jargon,649,90,0775912c7442c9562f6769a7d5ec0cb92329d3ae091493df63be6f201a62a3a7,pass,
+case-323,case-323.txt,Data\Original_data\case-323.txt,Data\Cleaned_data\case-323.txt,Rio Tinto – Gudai-Darri Smart Mine Production Management,Main,Industry jargon,692,85,6f3bf11577e51ee98b918ed514b3c965fa92bfb63fec9661655362143732bfcc,pass,
+case-379,case-379.txt,Data\Original_data\case-379.txt,Data\Cleaned_data\case-379.txt,Carlsberg – UK Joint Venture Integration,Main,Plain language,645,103,5d7421769db5a0aa834f78a3d893baada206f8078bb8ddb1ff6cd7e393cb45a1,pass,
+case-393,case-393.txt,Data\Original_data\case-393.txt,Data\Cleaned_data\case-393.txt,Bristol Myers Squibb – Gen AI-Accelerated Clinical Trials,Main,Spanish,781,123,97032f82cf6446d1a022fee4eb64ffaf967221b5ce2411462f5d2967b504d26c,pass,
+case-446,case-446.txt,Data\Original_data\case-446.txt,Data\Cleaned_data\case-446.txt,Meiji Yasuda Life – AI-Led Business Reinvention,Main,Japanese,290,4,06935ec4317bab3f5e7daa48ccc11b67fbc5b229b70bcfa1e17dfda03bed9aa6,warn,short_text
+case-452,case-452.txt,Data\Original_data\case-452.txt,Data\Cleaned_data\case-452.txt,NBCUniversal (launching the Peacock streaming service),Main,Plain language,512,84,c6b86dbbbde2cc97eda2ef056a92f1c7284f479b7c6e0a572f4d3db528c3b04a,pass,
+case-455,case-455.txt,Data\Original_data\case-455.txt,Data\Cleaned_data\case-455.txt,Shionogi – Back-Office Joint Venture,Main,Industry jargon,658,86,39b2cefc1d46958221faac3818ecc10c3db800fa86f746f6aa7d0376cade5c61,pass,
+case-462,case-462.txt,Data\Original_data\case-462.txt,Data\Cleaned_data\case-462.txt,EDF UK – Customer Migration to Kraken,Main,Plain language,593,93,f4f61aa9c6b4ec23454087376d2a17fff3a402bc23109063ddb2d32c7b3b4672,pass,
+case-480,case-480.txt,Data\Original_data\case-480.txt,Data\Cleaned_data\case-480.txt,Leonardo – Omnichannel Aftersales Customer Platform,Main,Industry jargon,679,91,4448877be19178c61b7d451f52d7449bdf7d3502c63201e6af14244f86ca055d,pass,
+case-549,case-549.txt,Data\Original_data\case-549.txt,Data\Cleaned_data\case-549.txt,Singapore CPF Board – Social Security Modernisation,Main,Malay,786,97,06ac8a7f729a21200f64fe058eb6dabf45b1382e30ee58c9a4737c90ee9af261,pass,
+case-557,case-557.txt,Data\Original_data\case-557.txt,Data\Cleaned_data\case-557.txt,Microsoft – Cloud Supply Chain at the Speed of AI,Main,Plain language,598,99,6869321a46973affef303a89e97b0eda0e545badae0347a945671fa11e43bec3,pass,
+case-590,case-590.txt,Data\Original_data\case-590.txt,Data\Cleaned_data\case-590.txt,Novartis – Data-Led Transformation,Main,Plain language,622,95,58f9d6d1ef4773e62304e3ba7d2930175df07acb52f553c0cdbe65675d28f705,pass,
+case-616,case-616.txt,Data\Original_data\case-616.txt,Data\Cleaned_data\case-616.txt,BBVA – Digital Sales Model,Main,Plain language,640,108,f1880ae0a945b6a5b380a68ad10a79d73a4436f44d65d6a65ba301b39b557c5e,pass,
+case-634,case-634.txt,Data\Original_data\case-634.txt,Data\Cleaned_data\case-634.txt,bp – Data-Driven Fuel Retail Loyalty,Main,Hindi,614,104,1a7fd8ecd3ce70d9286ff0fab68ce04a1efde9496ab943414f9c4602dc81bfa5,pass,
+case-678,case-678.txt,Data\Original_data\case-678.txt,Data\Cleaned_data\case-678.txt,Best Buy – Gen AI Customer Support,Main,Industry jargon,629,87,d81fbc2fe822b03d2d1abb39b94e38f0c437e18ff03bf1759e1caebcaa78e7b0,pass,
+case-714,case-714.txt,Data\Original_data\case-714.txt,Data\Cleaned_data\case-714.txt,UNIQA – DORA Compliance Roadmap,Main,German,753,83,ea051c0d38f8e18954465ab4279b6267a5c3c48d75bfd880b9cab5c9af087572,pass,
+case-746,case-746.txt,Data\Original_data\case-746.txt,Data\Cleaned_data\case-746.txt,European Commission DG MARE – AI to Safeguard Fisheries,Main,Industry jargon,687,94,08210587d1f8335f39644bc2fc7a18bdc40f4e4a835aa7bde9b90c82821bd050,pass,
+case-750,case-750.txt,Data\Original_data\case-750.txt,Data\Cleaned_data\case-750.txt,Eni – Hybrid Cloud & Green Data Center,Main,Plain language,588,104,f64fc5bf14645b5dfd4a3e37da8212a38dd880f124e490bcdc162be87e43be45,pass,
+case-757,case-757.txt,Data\Original_data\case-757.txt,Data\Cleaned_data\case-757.txt,Belden Horizon – Edge & AI Industrial Platform,Main,Plain language,635,100,cb4deb0fc652781900b112f83b507a0317c2e50d9737a1d12b1bbc5c32d95365,pass,
+case-774,case-774.txt,Data\Original_data\case-774.txt,Data\Cleaned_data\case-774.txt,PruittHealth – Growing Access to Post-Acute Care,Main,Industry jargon,631,81,dd805a6d3adfe70aca5346a5d3e74fa07dea799e69aa47724a5cc504a04f60c3,pass,
+case-799,case-799.txt,Data\Original_data\case-799.txt,Data\Cleaned_data\case-799.txt,Mount Sinai Health System – Epic EMR on Azure,Main,Plain language,588,97,bd0f8767d0c135e929277ec70b4e7e50e4f1b8ccaf921ce5b4b4e41dc964ad0d,pass,
+case-845,case-845.txt,Data\Original_data\case-845.txt,Data\Cleaned_data\case-845.txt,Commonwealth Bank of Australia – Core Banking on Cloud,Main,Industry jargon,655,91,13f2ea0c0ba02201c7f2373d123c63fce3053e0810a2f34480f6a52166bfda9c,pass,
+case-883,case-883.txt,Data\Original_data\case-883.txt,Data\Cleaned_data\case-883.txt,Cisco – Workday-Powered HR Reinvention,Main,Portuguese (Brazil),791,122,504cf9bf5a84aa2108ba04f79edd93bf74f1271f3a68f17a0b8c4d4706de98eb,pass,
+case-251,case-251.txt,,,Poste Italiane – Postal Service to Platform Powerhouse,Live,Italian,,,,missing_source,source_file_not_found
+case-281,case-281.txt,,,Marriott International – mHUB Global HR Hub,Live,Industry jargon,,,,missing_source,source_file_not_found
+case-291,case-291.txt,,,Al Etihad Payments – Aani Instant Payments Platform,Live,Arabic,,,,missing_source,source_file_not_found
+case-419,case-419.txt,,,Sumitomo Metal Mining – SOLAMENT™ Material Relaunch,Live,Industry jargon,,,,missing_source,source_file_not_found
+case-472,case-472.txt,,,Uber – Scaling a $1B Advertising Business,Live,Industry jargon,,,,missing_source,source_file_not_found
+case-570,case-570.txt,,,Duke Energy – AI Methane Detection Platform,Live,Industry jargon,,,,missing_source,source_file_not_found
+case-699,case-699.txt,,,Public Power Corporation (PPC) – Digital Utility Reinvention,Live,Greek,,,,missing_source,source_file_not_found
+case-985,case-985.txt,,,Fincantieri – Navis Sapiens Smart Ship Platform,Live,Norwegian,,,,missing_source,source_file_not_found
+case-994,case-994.txt,,,IFF – Post-Merger Quality Systems to the Cloud,Live,Romanian,,,,missing_source,source_file_not_found
