@@ -48,8 +48,8 @@ def _record(case_id: str):
 
 ENRICHMENT_FIELDS = ("language", "sector", "country", "problem_plain",
                      "capability", "scale_outcomes", "reusable")
-NO_MATCH_MESSAGE = ("No strong match found. The closest entries are shown below, "
-                    "marked as weak matches.")
+NO_MATCH_MESSAGE = ("No strong match found in past deliveries for this question. "
+                    "Try rephrasing, or this may be new work for us.")
 
 
 class SearchRequest(BaseModel):

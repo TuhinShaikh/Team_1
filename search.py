@@ -395,7 +395,7 @@ class LynceusIndex:
             })
 
         if no_strong:
-            results = results[:2]  # show closest only, labelled weak; don't pad
+                        results = [] if self.embedder else results[:2]  # reject on semantic gate; BM25-only fallback keeps 2 weak
 
         return {"query": query, "corrections": corrections, "no_strong_match": no_strong,
                 "top_strength": round(float(top_strength), 3),
