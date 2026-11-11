@@ -7,12 +7,26 @@ from fastapi import APIRouter, HTTPException,Depends
 from corpus import DOCUMENTS
 import agent_settings as agent 
 from pydantic import BaseModel
+from search_service import search_cases
 
 
 import llm 
 
 
 router = APIRouter(prefix = "/endpoints", tags=["endpoints"])
+
+
+class SearchRequest(BaseModel):
+    query: str
+
+
+@router.post("/search")
+def search(req: SearchRequest):
+    """Search the generated case corpus without an external AI service."""
+    query = req.query.strip()
+    if not query:
+        raise HTTPException(status_code=422, detail="Please describe the client's problem.")
+    return search_cases(query)
 
 
 

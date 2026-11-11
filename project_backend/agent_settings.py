@@ -9,7 +9,7 @@ It allows agent to use two tools:
 
 #import knowledge_store as knowledge
 
-from llm import MODEL,client
+from llm import MODEL, get_client
 
 
 # agent system prompt 
@@ -55,7 +55,7 @@ def ask_with_tools(question:str) -> dict:
 
     #the loop 
     for _ in range(MAX_ITERATIONS):
-        response = client.messages.create(
+        response = get_client().messages.create(
                     model=MODEL,
                     max_tokens=600,
                     system=AGENT_SYSTEM_PROMPT,

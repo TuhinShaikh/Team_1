@@ -2,13 +2,8 @@ export type SearchResult = {
   case_id: string;
   source_path: string;
   language: string;
-  sector: string;
-  country: string;
-  problem_plain: string;
-  capability: string;
-  scale_outcomes: string;
-  reusable: string;
-  summary?: string;
+  summary: string;
+  body: string;
 };
 
 export type SearchResponse = {
@@ -23,8 +18,7 @@ export async function searchCases(
     throw new Error("Please describe the client's problem.");
   }
 
-  // Example URL
-  const response = await fetch("http://localhost:8000/api/search", {
+  const response = await fetch("http://localhost:8000/endpoints/search", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

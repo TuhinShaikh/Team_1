@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react";
 import {
   searchCases,
   type SearchResult,
-} from "../api/search";
+} from "../api/real_search";
 import { analyseCase, type CaseAnalysis } from "../api/case_analysis";
 
 export default function SearchPage() {
@@ -65,10 +65,6 @@ export default function SearchPage() {
     } finally {
       setAnalysisLoading(false);
     }
-  }
-
-  function display(value: string | null | undefined) {
-    return value?.trim() || "Not provided";
   }
 
   return (
@@ -179,36 +175,19 @@ export default function SearchPage() {
               Match {index + 1} · {result.case_id}
             </p>
 
-            <h2>{result.case_id}</h2>
+            <h2>{result.summary || result.case_id}</h2>
 
             <p className="hint">
-              {[
-                result.sector,
-                result.country,
-                result.language,
-              ]
-                .filter(Boolean)
-                .join(" · ") || "No metadata available"}
+              {result.language || "Language not provided"}
             </p>
 
-            {result.summary && <p>{result.summary}</p>}
-
             <div className="match-reason">
-              <h3>Client problem</h3>
-              <p>{display(result.problem_plain)}</p>
+              <h3>Case overview</h3>
+              <p>{result.body}</p>
             </div>
 
-            <h3>Technique used</h3>
-            <p>{display(result.capability)}</p>
-
-            <h3>Scale and outcomes</h3>
-            <p>{display(result.scale_outcomes)}</p>
-
-            <h3>What could be reused</h3>
-            <p>{display(result.reusable)}</p>
-
             <p className="hint source-path">
-              Source: {display(result.source_path)}
+              Source: {result.source_path}
             </p>
           </article>
         ))}
