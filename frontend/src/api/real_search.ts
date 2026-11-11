@@ -1,3 +1,21 @@
+export type SearchResult = {
+  case_id: string;
+  source_path: string;
+  language: string;
+  sector: string;
+  country: string;
+  problem_plain: string;
+  capability: string;
+  scale_outcomes: string;
+  reusable: string;
+  summary?: string;
+};
+
+export type SearchResponse = {
+  results: SearchResult[];
+  message: string | null;
+};
+
 export async function searchCases(
   query: string
 ): Promise<SearchResponse> {
@@ -5,7 +23,7 @@ export async function searchCases(
     throw new Error("Please describe the client's problem.");
   }
 
-  // Example URL — replace with your teammate's actual endpoint.
+  // Example URL
   const response = await fetch("http://localhost:8000/api/search", {
     method: "POST",
     headers: {
@@ -19,4 +37,4 @@ export async function searchCases(
   }
 
   return await response.json();
-} """
+}
