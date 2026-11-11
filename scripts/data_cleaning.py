@@ -15,6 +15,7 @@ MAP_COLUMNS = ("File", "Deck no.", "Delivery", "Round", "Version given")
 
 def normalize_text(text: str) -> str:
     """Normalize whitespace and Unicode without changing the source language."""
+    # Keep the words and punctuation intact; this step only removes formatting noise.
     text = text.replace("\ufeff", "")
     text = unicodedata.normalize("NFC", text)
     text = text.replace("\r\n", "\n").replace("\r", "\n")
@@ -61,6 +62,7 @@ def process_corpus(
     source_names = {path.name for path in source_files}
     rows: list[dict[str, str]] = []
 
+    # The cleaned folder is separate so the original files remain untouched.
     cleaned_dir.mkdir(parents=True, exist_ok=True)
 
     for source_path in source_files:
@@ -90,6 +92,7 @@ def process_corpus(
             }
         )
 
+    # Keep missing files in the manifest so the team can see the full expected set.
     for file_name, metadata_row in sorted(metadata.items()):
         if file_name not in source_names:
             rows.append(
