@@ -37,3 +37,27 @@ client = anthropic.Anthropic(
 
 #RULES GO IN SYSTEM
 #DATA GOES IN USER 
+
+#-----------------------LLM summmary for summary of fund fact sheets---------------------------------------------------------------------
+
+SYSTEM_PROMPT = (
+    "You are a helpfull . "
+    "Use British English "
+     
+)
+
+
+#this function is too build the prompt used to summarise fund fact sheets by fund id 
+def build_prompt( fund_factsheet:dict) -> str:
+    return (
+        f"Summarise this investment fund factsheet for a portfolio manager in formal yet fun way"
+        f"Name: {fund_factsheet["title"]} "
+        f"Body:{fund_factsheet["body"]} "
+    )
+
+
+#
+
+
+
+
