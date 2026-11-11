@@ -7,10 +7,9 @@
 
 This is how to run fast api
 
-git clone it 
 
 
-1. CD to ASSET_MANAGEMENT_API folder  in git bash
+1. CD to project_backend folder  in git bash
 
 
 2. Create virtual enviroment in git bash 
