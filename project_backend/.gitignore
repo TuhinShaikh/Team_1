@@ -1,0 +1,14 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Database store
+chroma_store/
+
+
+
