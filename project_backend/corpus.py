@@ -1,5 +1,7 @@
 
 
+from typing import Any
+
 #EXAMMPPLE CORPUS OF DOCUMENTS FOR TESTING PURPOSES
 
 DOCUMENTS: list[dict[str, Any]] = [
