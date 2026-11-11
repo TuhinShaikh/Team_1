@@ -119,8 +119,8 @@ def _execute_tool(name:str, tool_input:dict) -> tuple[str,bool]:
     """ Run the requested tool. Returns (result_text,is_error) """
 
     #Guardrails 
-    # Guard 1 - we only have two valid tools - checks if it is equal to that(wrong tool if its not search )
-    valid_tools = ["search_knowledge_base", "predict_portfolio_returns"]
+    # Guard 1 - we only have one valid tool - checks if it is equal to that(wrong tool if its not search )
+    valid_tools = ["search_knowledge_base"]
     if name not in valid_tools:
         return f"Unknown tool: {name}", True 
 
@@ -129,9 +129,7 @@ def _execute_tool(name:str, tool_input:dict) -> tuple[str,bool]:
     if name == "search_knowledge_base":
         if "query" not in tool_input:
             return "Error: missing required field: query", True
-    elif name == "predict_portfolio_returns":
-        if "client_id" not in tool_input:
-            return "Error: missing required field: client_id", True
+
 
     # Execution branch 1: Search Knowledge Base
     if name == "search_knowledge_base":
