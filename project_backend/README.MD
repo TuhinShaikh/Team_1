@@ -30,3 +30,6 @@ git clone it
 5. Run server with 
 
  $ uvicorn main:app --reload
+
+
+Important before running server make sure enviroment has API ANTHROPIC KEY 
