@@ -70,6 +70,17 @@ Data/manifest.csv
 Data/quality_report.csv
 ```
 
+To create the Python list used by the search team, run:
+
+```powershell
+py -3 scripts\build_corpus.py
+```
+
+This creates `Data/corpus.py`. It contains one record for each available
+cleaned case, including the case ID, language, text, source file, delivery, and
+round. Missing cases are left out of the corpus and remain visible in the
+manifest.
+
 ## Small example
 
 Before cleaning, a file may contain an invisible `[BOM]` marker:
