@@ -11,6 +11,14 @@ from pathlib import Path
 
 
 MAP_COLUMNS = ("File", "Deck no.", "Delivery", "Round", "Version given")
+JAPANESE_LANGUAGE = "Japanese"
+
+
+def has_enough_content(text: str, language: str) -> bool:
+    """Use characters rather than whitespace-separated words for Japanese."""
+    if language == JAPANESE_LANGUAGE:
+        return len(text.strip()) >= 20
+    return len(text.split()) >= 20
 
 
 def normalize_text(text: str) -> str:
@@ -43,7 +51,7 @@ def quality_status(text: str, metadata: dict[str, str] | None) -> tuple[str, str
         warnings.append("missing_metadata")
     if not text.strip():
         warnings.append("empty_text")
-    elif len(text.split()) < 20:
+    elif not has_enough_content(text, (metadata or {}).get("Version given", "")):
         warnings.append("short_text")
     if warnings:
         return "warn", ";".join(warnings)
@@ -95,6 +103,16 @@ def process_corpus(
     # Keep missing files in the manifest so the team can see the full expected set.
     for file_name, metadata_row in sorted(metadata.items()):
         if file_name not in source_names:
+            status = (
+                "unreleased_live"
+                if metadata_row.get("Round", "").casefold() == "live"
+                else "missing_source"
+            )
+            warning = (
+                "live_source_not_released"
+                if status == "unreleased_live"
+                else "source_file_not_found"
+            )
             rows.append(
                 {
                     "case_id": Path(file_name).stem,
@@ -107,8 +125,8 @@ def process_corpus(
                     "character_count": "",
                     "word_count": "",
                     "sha256": "",
-                    "quality_status": "missing_source",
-                    "quality_warnings": "source_file_not_found",
+                    "quality_status": status,
+                    "quality_warnings": warning,
                 }
             )
 
@@ -139,7 +157,14 @@ def process_corpus(
 
     print(f"Processed source files: {len(source_files)}")
     print(f"Metadata rows: {len(metadata)}")
-    print(f"Missing source files: {sum(row['quality_status'] == 'missing_source' for row in rows)}")
+    print(
+        "Unavailable files: "
+        f"{sum(row['quality_status'] in {'missing_source', 'unreleased_live'} for row in rows)}"
+    )
+    print(
+        "Unreleased live files: "
+        f"{sum(row['quality_status'] == 'unreleased_live' for row in rows)}"
+    )
     print(f"Cleaned files: {sum(bool(row['cleaned_file']) for row in rows)}")
     print(f"Manifest: {manifest_path}")
     print(f"Quality report: {quality_report_path}")

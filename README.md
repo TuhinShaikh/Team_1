@@ -48,29 +48,24 @@ scripts/
 
 ## Running the script
 
-Run these commands from the repository root:
+Run this command from the repository root:
 
 ```powershell
-py -3 scripts\data_cleaning.py `
-  --metadata ".\lynceus_answer_key_file_map.csv"
+py -3 scripts\run_pipeline.py
 ```
 
-If the metadata CSV is one folder above the repository, use:
-
-```powershell
-py -3 scripts\data_cleaning.py `
-  --metadata "..\lynceus_answer_key_file_map.csv"
-```
-
-This creates or updates:
+The pipeline reads the metadata map from the repository root and runs both
+cleaning and corpus generation. It creates or updates:
 
 ```text
 Data/Cleaned_data/
 Data/manifest.csv
 Data/quality_report.csv
+Data/corpus.py
 ```
 
-To create the Python list used by the search team, run:
+If you need to run the two stages separately, these commands are also
+available:
 
 ```powershell
 py -3 scripts\build_corpus.py
