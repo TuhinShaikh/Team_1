@@ -17,8 +17,6 @@ Kept by Ahmad (Evidence and Demo Lead). One line per decision, problem or milest
 
 **__:__ – Test set drafted by Abbas and Yurie.** 12 questions (6 sales lead, 6 delivery lead), including the 2 supplied sample questions. Covers: 2 cross-industry matches (S3 banking to fisheries, D1 food factory to mining), 2 non-English matches (S4 Portuguese, D5 Indonesian), 1 no-match question (D6 Mars spacecraft). Status: draft, awaiting product owner sign-off.
 
-**__:__ – Confirmed with Mike** that the answer key file map (`lynceus_answer_key_file_map.csv`) and the Veridane examples document were provided to the team on purpose.
-
 **__:__ – Test set approved by product owner.** Changes made: ________
 
 **__:__ – Test set committed to repo** (commit: ________), before search build started.
