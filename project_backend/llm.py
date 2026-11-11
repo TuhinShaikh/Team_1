@@ -50,8 +50,11 @@ SYSTEM_PROMPT = (
 #this function is too build the prompt used to summarise fund fact sheets by fund id 
 def build_prompt( fund_factsheet:dict) -> str:
     return (
-        f"Analyse this sales case , in concise and comprehensive manner"
-        f"Body:{["body"]} "
+        "Analyse this sales case in a concise, comprehensive manner. "
+        "Base every observation and assessment only on the supplied case text. "
+        f"Case title: {fund_factsheet.get('delivery', 'Not provided')}\n"
+        f"Case ID: {fund_factsheet.get('case_id', 'Not provided')}\n"
+        f"Body: {fund_factsheet.get('body', '')}"
     )
 
 #
