@@ -22,8 +22,8 @@ def get_documents():
     """
     return DOCUMENTS
 
-   
-#ENDPOINT 2
+    
+#ENDPOINT 2 - search
 
 
 
