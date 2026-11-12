@@ -26,7 +26,7 @@ def client(tmp_path, monkeypatch):
         {"id": "T2", "question": "florist wedding bouquets", "expected": []},
     ]), encoding="utf-8")
 
-    from routers import search_api
+    from backend.routers import search_api
     monkeypatch.setattr(search_api, "CORPUS_DIR", str(corpus))
     monkeypatch.setattr(search_api, "ENRICHED_DIR", str(tmp_path / "none"))
     monkeypatch.setattr(search_api, "TEST_SET", str(tests))

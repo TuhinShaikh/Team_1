@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from search import LynceusIndex, load_field_map, load_records, tokenize
+from backend.search import LynceusIndex, load_field_map, load_records, tokenize
 
 EXPECTED_KEYS = {"rank", "case_id", "score", "similarity", "strong_match",
                  "summary", "why", "source"}
@@ -163,7 +163,7 @@ class CountingEmbedder:
 
 
 def test_embeddings_are_cached_and_queries_batched(corpus, tmp_path, monkeypatch):
-    import search
+    from backend import search
     monkeypatch.setattr(search, "CACHE_DIR", tmp_path / "cache")
     emb = CountingEmbedder()
     idx = LynceusIndex(load_records(str(corpus)), emb)
@@ -181,7 +181,7 @@ def test_embeddings_are_cached_and_queries_batched(corpus, tmp_path, monkeypatch
 
 
 def test_new_file_embeds_only_the_new_text(corpus, tmp_path, monkeypatch):
-    import search
+    from backend import search
 
     class TextCounter(CountingEmbedder):
         def __init__(self):

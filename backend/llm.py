@@ -2,7 +2,7 @@
 
 analyse_case() turns one raw case into a structured English record that
 matches the search's enrichment fields. Save it with save_enrichment() and
-search.py picks it up from Data/enriched/ on the next /api/reindex.
+    search service picks it up from Data/enriched/ on the next /api/reindex.
 
 Every record is an agent DRAFT: a person must check it against the source
 before it counts as reviewed (brief: spot-check at least 10, keep both).
@@ -118,7 +118,7 @@ def save_enrichment(result: dict, source_path: str, out_dir: str = "Data/enriche
 
 
 if __name__ == "__main__":
-    # python llm.py data/corpus/case-714.txt   -> analyse one case and save it
+    # python -m backend.llm Data/Cleaned_data/case-714.txt -> analyse and save
     import sys
     for arg in sys.argv[1:]:
         p = Path(arg)

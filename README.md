@@ -6,9 +6,7 @@ Lynceus helps users find relevant past project cases by describing a client need
 
 ```text
 frontend/              React + TypeScript interface, built with Vite
-project_backend/       FastAPI application entry point
-search.py              Hybrid search and indexing logic
-routers/               Search, case, and document API routes
+backend/               FastAPI app, search engine, model clients, and API routes
 Data/Original_data/    Original case text files
 Data/Cleaned_data/     Normalized case text used for indexing
 Data/enriched/         Structured case fields used to improve search
@@ -45,7 +43,7 @@ On Windows PowerShell, activate it with:
 Start the API from the repository root:
 
 ```bash
-python -m uvicorn project_backend.main:app --reload
+python -m uvicorn backend.main:app --reload
 ```
 
 The API runs at <http://localhost:8000>. Interactive API documentation is at <http://localhost:8000/docs>; the health check is <http://localhost:8000/health>.
@@ -95,6 +93,8 @@ python scripts/run_pipeline.py
 ```
 
 The pipeline reads `Data/Original_data/` and `lynceus_answer_key_file_map.csv`, then updates `Data/Cleaned_data/`, `Data/manifest.csv`, `Data/quality_report.csv`, and `Data/corpus.py`. Original files are not modified. Restart the backend or call `POST /api/reindex` to load changed data into the running search index.
+
+The search engine can also be run directly from the repository root with `python -m backend.search "describe the client need"`.
 
 ## Frontend production build
 

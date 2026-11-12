@@ -32,13 +32,4 @@ Kept by Ahmad (Evidence and Demo Lead). One line per decision, problem or milest
 **HH:MM – What happened.** Who decided / found it. Because: ________
 -->
 
-## Check-in rounds
 
-Every 30 minutes or so, ask each person: "What have you done since I last asked, and did you decide anything?"
-
-| Time | Isabel | Abbas / Yurie | Tohin | Elakya | Ashar / Javid | Girthan |
-|------|--------|---------------|-------|--------|---------------|---------|
-|      |        |               |       |        |               |         |
-|      |        |               |       |        |               |         |
-|      |        |               |       |        |               |         |
-|      |        |               |       |        |               |         |

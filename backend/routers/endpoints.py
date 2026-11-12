@@ -3,11 +3,11 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 import re
 
-import agent_settings as agent
-import llm
-from corpus import DOCUMENTS
-from routers.search_api import ENRICHED_DIR, _enrichment_files, _record
-from project_backend import llm as observations_llm
+from backend import agent_settings as agent
+from backend import llm
+from backend.corpus import DOCUMENTS
+from backend.routers.search_api import ENRICHED_DIR, _enrichment_files, _record
+from backend import observation_llm
 
 router = APIRouter(prefix="/endpoints", tags=["endpoints"])
 
@@ -28,7 +28,7 @@ def analyse_case_observations(case_id: str):
     if document is None:
         raise HTTPException(status_code=404, detail=f"{case_id} not found")
     try:
-        result = observations_llm.analyse_case(document)
+        result = observation_llm.analyse_case(document)
         return {**result, "analysis_source": "anthropic", "reviewed_by_human": None}
     except APITimeoutError:
         raise HTTPException(status_code=504, detail="Summary provider timed out")

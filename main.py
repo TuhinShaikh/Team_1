@@ -1,17 +1,5 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+"""Compatibility entry point; the application now lives in backend.main."""
 
-from routers import endpoints, search_api
+from backend.main import app
 
-app = FastAPI(title="lynceus project")
-
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"],
-                   allow_methods=["*"], allow_headers=["*"])
-
-app.include_router(endpoints.router)
-app.include_router(search_api.router)
-
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}
+__all__ = ["app"]

@@ -1,14 +1,41 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import {
   getDocuments,
   type CaseDocument,
 } from "../api/documents";
+import { analyseCase, type CaseAnalysis } from "../api/case_analysis";
 
 export default function DocumentsPage() {
   const [documents, setDocuments] = useState<CaseDocument[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [reloadCount, setReloadCount] = useState(0);
+  const [caseId, setCaseId] = useState("");
+  const [caseAnalysis, setCaseAnalysis] = useState<CaseAnalysis | null>(null);
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [analysisError, setAnalysisError] = useState("");
+  const [analysedCaseId, setAnalysedCaseId] = useState("");
+
+  async function handleCaseAnalysis(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!caseId.trim() || analysisLoading) return;
+
+    setAnalysisLoading(true);
+    setAnalysisError("");
+    setCaseAnalysis(null);
+    setAnalysedCaseId("");
+    try {
+      const response = await analyseCase(caseId);
+      setCaseAnalysis(response);
+      setAnalysedCaseId(caseId.trim());
+    } catch (error) {
+      setAnalysisError(
+        error instanceof Error ? error.message : "Could not analyse this case."
+      );
+    } finally {
+      setAnalysisLoading(false);
+    }
+  }
 
   useEffect(() => {
     const controller = new AbortController();
@@ -62,6 +89,46 @@ export default function DocumentsPage() {
           {loading ? "Loading..." : "Reload documents"}
         </button>
       </header>
+
+      <section className="search-panel case-lookup" aria-labelledby="case-lookup-title">
+        <h2 id="case-lookup-title">Find a case by ID</h2>
+        <p className="hint">Enter a case ID to view its observations and overall assessment. AI analysis uses the configured model; saved case records are used as a fallback.</p>
+        <form onSubmit={handleCaseAnalysis}>
+          <label htmlFor="case-id">Case ID</label>
+          <input
+            id="case-id"
+            type="text"
+            placeholder="For example: case-209"
+            value={caseId}
+            onChange={(event) => setCaseId(event.target.value)}
+            disabled={analysisLoading}
+            required
+          />
+          <button type="submit" disabled={analysisLoading || !caseId.trim()}>
+            {analysisLoading ? "Analysing..." : "Analyse case"}
+          </button>
+        </form>
+        {analysisLoading && <p role="status">Preparing case analysis...</p>}
+        {analysisError && <p className="error" role="alert">{analysisError}</p>}
+        {caseAnalysis && (
+          <article className="case-analysis" aria-live="polite">
+            <p className="case-id">Analysis for {analysedCaseId}</p>
+            {caseAnalysis.analysis_source === "saved_enrichment" && (
+              <p className="notice">
+                Showing the saved structured record{caseAnalysis.reviewed_by_human ? " (human reviewed)." : " (not marked as human reviewed)."}
+              </p>
+            )}
+            {caseAnalysis.analysis_source === "source_text" && (
+              <p className="notice">Showing source sentences only. Configure ANTHROPIC_API_KEY to generate an AI assessment.</p>
+            )}
+            {caseAnalysis.analysis_source === "anthropic" && <p className="hint">AI-generated analysis. Check it against the source text.</p>}
+            <h3>Observations</h3>
+            <ul>{caseAnalysis.analysis.Observations.map((item, index) => <li key={index}>{item}</li>)}</ul>
+            <h3>Overall assessment</h3>
+            <ul>{caseAnalysis.analysis.OverallAssesment.map((item, index) => <li key={index}>{item}</li>)}</ul>
+          </article>
+        )}
+      </section>
 
       <div role="status" aria-live="polite">
         {loading && <p>Loading documents...</p>}

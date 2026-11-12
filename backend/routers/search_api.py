@@ -7,9 +7,9 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field
 
-from search import LynceusIndex, get_embedder, load_field_map, load_records
+from backend.search import LynceusIndex, get_embedder, load_field_map, load_records
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 CORPUS_DIR = os.getenv("LYNCEUS_CORPUS", str(ROOT / "Data" / "Cleaned_data"))
 ENRICHED_DIR = os.getenv("LYNCEUS_ENRICHED", str(ROOT / "Data" / "enriched"))
 FIELD_MAP = os.getenv("LYNCEUS_FIELD_MAP", str(ROOT / "field_map.json"))

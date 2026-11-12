@@ -7,8 +7,8 @@ It allows agent to use two tools:
 
 """
 
-from routers.search_api import index as search_index
-from llm import MODEL, get_client
+from backend.routers.search_api import index as search_index
+from backend.llm import MODEL, get_client
 
 
 # agent system prompt 

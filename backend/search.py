@@ -1,11 +1,11 @@
 """Lynceus search: hybrid BM25 + embeddings over enriched case records.
 
 Usage:
-    python search.py "a client wants to cut call-centre wait times with AI"
-    python search.py --raw data/corpus --enriched data/enriched "query"
-    python search.py --json "query"                      # agreed output format
-    python search.py --calibrate evaluation/test_set.json
-    python search.py                                     # interactive prompt
+    python -m backend.search "a client wants to cut call-centre wait times with AI"
+    python -m backend.search --raw Data/Cleaned_data --enriched Data/enriched "query"
+    python -m backend.search --json "query"
+    python -m backend.search --calibrate evaluation/test_set.json
+    python -m backend.search                                # interactive prompt
 
 Every case file in --raw is indexed. Enrichment is attached where it exists;
 cases without it fall back to raw text. Map the enrichment's field names to
@@ -493,7 +493,7 @@ def main():
     repo_root = Path(__file__).resolve().parent
     ap.add_argument("--raw", default=str(repo_root / "Data" / "Cleaned_data"), help="folder of case-*.txt")
     ap.add_argument("--enriched", default=str(repo_root / "Data" / "enriched"), help="folder of enriched JSON records")
-    ap.add_argument("--field-map", default="field_map.json",
+    ap.add_argument("--field-map", default=str(repo_root / "field_map.json"),
                     help="optional JSON mapping our field names to the enrichment's")
     ap.add_argument("--embedder", default="auto", choices=["auto", "voyage", "local", "none"])
     ap.add_argument("-k", type=int, default=5)
