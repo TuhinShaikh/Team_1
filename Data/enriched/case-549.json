@@ -1,0 +1,17 @@
+{
+  "case_id": "case-549",
+  "source_path": "Data/corpus/case-549.txt",
+  "language": "Malay",
+  "sector": "Social Security / Government",
+  "country": "Singapore",
+  "problem_plain": "A national social security organisation needed to modernise both front-end and back-end systems to enable faster response to policy changes whilst maintaining minimum service disruption and delivering personalised member experience across all devices.",
+  "capability": "Mainframe application framework modernisation, platform application and data repository redesign, business process re-engineering, modularisation and shared services architecture",
+  "scale_outcomes": "Approximately 600 CPFB staff involved; system complexity reduced; performance and productivity increased significantly; members now receive personalised information and actions according to life stage through simplified digital channels",
+  "reusable": "Mainframe modernisation approach with minimum service disruption; modularisation and shared services architecture for reducing system complexity; business process re-engineering for personalised omnichannel member experience",
+  "summary": "Lembaga CPF Singapura undertook comprehensive front-end and back-end modernisation with Veridane from 2018, involving approximately 600 staff and modernising the core mainframe application framework with minimal service disruption. The programme achieved reduced system complexity, improved performance and productivity, and enabled personalised member experiences through simplified digital channels.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:59+00:00",
+    "reviewed_by_human": false
+  }
+}

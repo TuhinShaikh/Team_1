@@ -1,0 +1,17 @@
+{
+  "case_id": "case-678",
+  "source_path": "Data/corpus/case-678.txt",
+  "language": "English",
+  "sector": "Retail",
+  "country": "Not stated",
+  "problem_plain": "Best Buy needed to enhance customer care efficiency and self-service capabilities across multiple channels, including website, app and contact centre.",
+  "capability": "Generative AI virtual assistant and agent-assist tools deployed across BestBuy.com, the app and contact centre for customer troubleshooting, order management and membership support, with real-time conversation analysis and sentiment detection",
+  "scale_outcomes": "Not stated",
+  "reusable": "Generative AI virtual assistant design for omnichannel customer service; agent-assist tools for real-time conversation analysis, sentiment detection and knowledge-base automation; escalation architecture enabling seamless handoff to live agents",
+  "summary": "Best Buy deployed a generative AI virtual assistant and agent-assist tools across its website, app and contact centre to enable self-service for product troubleshooting, order management and membership support. The agent-assist tools analyse conversations in real time to surface recommendations, detect sentiment and automate knowledge-base navigation, reducing handling effort and enabling agents to focus on high-value interactions.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:15+00:00",
+    "reviewed_by_human": false
+  }
+}

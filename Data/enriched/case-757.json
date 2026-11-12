@@ -1,0 +1,17 @@
+{
+  "case_id": "case-757",
+  "source_path": "Data/corpus/case-757.txt",
+  "language": "English",
+  "sector": "Manufacturing/Industrial Equipment",
+  "country": "Not stated",
+  "problem_plain": "Belden wanted to expand beyond selling hardware (cables, switches and network equipment) to offer software that enables customers to manage factory and warehouse networks more intelligently.",
+  "capability": "AI-powered platform (Belden Horizon) that collects data from machines and network devices on the factory floor and provides real-time insights for remote network management and problem detection.",
+  "scale_outcomes": "Ambition for 20% of business to come from solutions by 2028",
+  "reusable": "The approach of adding AI-powered software solutions to hardware products to create new revenue streams and deepen customer relationships through ongoing service engagement.",
+  "summary": "Veridane helped Belden build Belden Horizon, an AI platform that collects factory floor data and provides real-time network insights for remote management. The solution opens new revenue streams and aims for 20% of Belden's business to come from solutions by 2028.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:29+00:00",
+    "reviewed_by_human": false
+  }
+}

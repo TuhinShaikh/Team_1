@@ -1,0 +1,17 @@
+{
+  "case_id": "case-883",
+  "source_path": "Data/corpus/case-883.txt",
+  "language": "Portuguese",
+  "sector": "Technology",
+  "country": "Not stated",
+  "problem_plain": "Cisco Systems needed to move away from traditional HR and implement a purpose-driven talent model for their People & Communities organisation. They required replacement of their legacy HCM system with a scalable cloud-based solution.",
+  "capability": "Implementation of Workday cloud suite (core HR, compensation planning and Workday Prism Analytics) with organisational redesign, new HR vision and governance models, change management and communications aligned to Cisco's Conscious Culture",
+  "scale_outcomes": "Operational efficiency, regulatory compliance, workforce insights and increased productivity and agility",
+  "reusable": "Cloud-based HCM implementation approach, HR governance and accountability models, change management and communication strategies for culture transformation, organisational redesign methodology incorporating customer voice",
+  "summary": "Cisco Systems replaced their legacy HCM system with a scalable Workday cloud suite (core HR, compensation planning and Prism Analytics) as the digital core of HR. The implementation included workshops to define a new HR vision and governance models, supported by change management and communications to embed Cisco's Conscious Culture, resulting in operational efficiency, regulatory compliance, workforce insights and increased productivity and agility.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:43+00:00",
+    "reviewed_by_human": false
+  }
+}

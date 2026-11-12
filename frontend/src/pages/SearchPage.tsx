@@ -1,9 +1,17 @@
 import { useState, type FormEvent } from "react";
 import {
+  reloadSearchIndex,
   searchCases,
   type SearchResult,
 } from "../api/real_search";
 import { analyseCase, type CaseAnalysis } from "../api/case_analysis";
+
+function isDuplicateText(first: string, second: string): boolean {
+  const normalize = (value: string) => value.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+  const a = normalize(first);
+  const b = normalize(second);
+  return Boolean(a && b && (a === b || (Math.min(a.length, b.length) > 60 && (a.includes(b) || b.includes(a)))));
+}
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
@@ -12,6 +20,9 @@ export default function SearchPage() {
   const [hasSearched, setHasSearched] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [searchMethod, setSearchMethod] = useState("");
+  const [indexLoading, setIndexLoading] = useState(false);
+  const [indexMessage, setIndexMessage] = useState("");
   const [caseId, setCaseId] = useState("");
   const [caseAnalysis, setCaseAnalysis] = useState<CaseAnalysis | null>(null);
   const [analysisLoading, setAnalysisLoading] = useState(false);
@@ -20,8 +31,11 @@ export default function SearchPage() {
 
   async function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    await runSearch(query);
+  }
 
-    if (!query.trim() || loading) return;
+  async function runSearch(searchQuery: string) {
+    if (!searchQuery.trim() || loading) return;
 
     setLoading(true);
     setError("");
@@ -30,10 +44,11 @@ export default function SearchPage() {
     setHasSearched(false);
 
     try {
-      const response = await searchCases(query.trim());
+      const response = await searchCases(searchQuery.trim());
 
       setResults(response.results);
       setMessage(response.message ?? "");
+      setSearchMethod(response.embedder);
       setHasSearched(true);
     } catch (error) {
       setError(
@@ -43,6 +58,22 @@ export default function SearchPage() {
       );
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function handleReloadIndex() {
+    setIndexLoading(true);
+    setIndexMessage("");
+    setError("");
+    try {
+      const response = await reloadSearchIndex();
+      setSearchMethod(response.embedder);
+      const sourceOnly = response.cases - response.enriched;
+      setIndexMessage(`Index updated: ${response.cases} source cases, ${response.enriched} structured records, ${sourceOnly} cases using source text only. Run the search again to use the refreshed index.`);
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Could not reload case records.");
+    } finally {
+      setIndexLoading(false);
     }
   }
 
@@ -99,11 +130,17 @@ export default function SearchPage() {
         >
           {loading ? "Searching..." : "Find projects"}
         </button>
+
+        <button className="reload-index-button" type="button" disabled={indexLoading} onClick={handleReloadIndex}>
+          {indexLoading ? "Reloading records…" : "Reload cases and structured records"}
+        </button>
       </form>
+
+      {indexMessage && <p className="notice" role="status">{indexMessage}</p>}
 
       <section className="search-panel case-lookup" aria-labelledby="case-lookup-title">
         <h2 id="case-lookup-title">Search individual case</h2>
-        <p className="hint">Enter a case ID to get an AI-generated analysis of that case.</p>
+        <p className="hint">Enter a case ID to view its observations and overall assessment. AI analysis uses the configured model; saved case records are used as a fallback.</p>
         <form onSubmit={handleCaseAnalysis}>
           <label htmlFor="case-id">Case ID</label>
           <input
@@ -124,6 +161,15 @@ export default function SearchPage() {
         {caseAnalysis && (
           <article className="case-analysis" aria-live="polite">
             <p className="case-id">Analysis for {analysedCaseId}</p>
+            {caseAnalysis.analysis_source === "saved_enrichment" && (
+              <p className="notice">
+                Showing the saved structured record{caseAnalysis.reviewed_by_human ? " (human reviewed)." : " (not marked as human reviewed)."}
+              </p>
+            )}
+            {caseAnalysis.analysis_source === "source_text" && (
+              <p className="notice">Showing source sentences only. Configure ANTHROPIC_API_KEY to generate an AI assessment.</p>
+            )}
+            {caseAnalysis.analysis_source === "anthropic" && <p className="hint">AI-generated analysis. Check it against the source text.</p>}
             <h3>Observations</h3>
             <ul>{caseAnalysis.analysis.Observations.map((item, index) => <li key={index}>{item}</li>)}</ul>
             <h3>Overall assessment</h3>
@@ -135,9 +181,9 @@ export default function SearchPage() {
       <div role="status" aria-live="polite">
         {loading && <p>Finding relevant projects...</p>}
 
-        {hasSearched && results.length === 0 && (
+        {hasSearched && (message || results.length === 0) && (
           <p className="notice">
-            {message || "No strong match found."}
+            {message || "No matching cases found."}
           </p>
         )}
 
@@ -145,8 +191,13 @@ export default function SearchPage() {
           <p>
             {results.length} matching{" "}
             {results.length === 1 ? "project" : "projects"}
+          {searchMethod && ` · ${searchMethod}`}
           </p>
         )}
+
+      {hasSearched && searchMethod === "none" && (
+        <p className="notice">Semantic embeddings are not configured. Search is using keyword matching only, so cross-vocabulary matches may be missed.</p>
+      )}
       </div>
 
       {error && (
@@ -166,28 +217,65 @@ export default function SearchPage() {
         aria-label="Search results"
         aria-busy={loading}
       >
-        {results.map((result, index) => (
+      {results.map((result, index) => (
           <article
             className="result-card"
             key={result.case_id}
           >
             <p className="case-id">
-              Match {index + 1} · {result.case_id}
+              Match {index + 1} · {result.case_id} · {result.strong_match ? "Strong match" : "Weak match"}
             </p>
 
-            <h2>{result.summary || result.case_id}</h2>
+            <h2>{result.case_id}</h2>
 
             <p className="hint">
-              {result.language || "Language not provided"}
+              {result.enriched
+                ? `${[result.sector, result.country, result.language].filter(Boolean).join(" · ") || "Structured record loaded"} · ${result.reviewed_by_human ? "human reviewed" : "not human reviewed"}`
+                : "Source text only · no structured record loaded"}
             </p>
 
             <div className="match-reason">
-              <h3>Case overview</h3>
-              <p>{result.body}</p>
+              <h3>Why this case was chosen</h3>
+              <p>{result.why || "No match explanation available."}</p>
             </div>
 
+            {result.summary && (
+              <>
+                <h3>{result.enriched ? "Structured case summary" : "Case text preview"}</h3>
+                <p>{result.summary}</p>
+              </>
+            )}
+
+            {result.problem_plain && !isDuplicateText(result.summary, result.problem_plain) && (
+              <>
+                <h3>Client problem</h3>
+                <p>{result.problem_plain}</p>
+              </>
+            )}
+
+            <details>
+              <summary>How it matched and details about the work</summary>
+              <h3>Meaning match</h3>
+              <p className="field-help">Shows how closely this case’s meaning matches your question. “Keyword only” means no semantic similarity score was available.</p>
+              <p>{result.similarity ?? "Keyword only"}</p>
+              <h3>Search ranking score</h3>
+              <p className="field-help">An internal value the search uses to order results. It is not a percentage or a certainty rating.</p>
+              <p>{result.score}</p>
+              {result.enriched ? <>
+                <h3>Capability</h3>
+                <p className="field-help">What the team did for the client, including the approach, services or technology used.</p>
+                <p>{result.capability || "No capability details are in this record."}</p>
+                <h3>Scale and outcomes</h3>
+                <p className="field-help">The reported size of the work and its results, such as systems involved, time saved or costs reduced.</p>
+                <p>{result.scale_outcomes || "No scale or outcome details are in this record."}</p>
+                <h3>Reusable approach</h3>
+                <p className="field-help">An approach from this case that may be useful for another client’s problem.</p>
+                <p>{result.reusable || "No reusable approach is described in this record."}</p>
+              </> : <p>No structured enrichment record is loaded for this case. Search is using the original case text.</p>}
+            </details>
+
             <p className="hint source-path">
-              Source: {result.source_path}
+              Source: {result.source_file || result.source_path}
             </p>
           </article>
         ))}

@@ -1,0 +1,17 @@
+{
+  "case_id": "case-323",
+  "source_path": "Data/corpus/case-323.txt",
+  "language": "English",
+  "sector": "Mining",
+  "country": "Australia",
+  "problem_plain": "Rio Tinto's Gudai-Darri iron ore mine needed a production management and monitoring layer to manage complex automated operations and convert real-time operational data into consistent production KPIs.",
+  "capability": "Manufacturing Execution System (MES) and production management layer using AVEVA Production Management (Ampla) and AVEVA PI System historian, with fixed-plant circuit-based monitoring, equipment time-usage tracking, delay-event auto-coding, and laboratory equipment monitoring.",
+  "scale_outcomes": "Not stated",
+  "reusable": "AVEVA Production Management (Ampla) combined with AVEVA PI System historian for fixed-plant circuit-based monitoring, equipment time-usage tracking, delay-event auto-coding and laboratory equipment monitoring in automated mining operations.",
+  "summary": "Veridane delivered an MES and production management layer at Gudai-Darri, Rio Tinto's fully automated iron ore mine in the Pilbara, combining AVEVA Ampla with the PI System historian. The solution converts real-time operational data into consistent production KPIs, supporting availability and utilisation analysis, faster root-cause response, and safer, more efficient operations.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:32+00:00",
+    "reviewed_by_human": false
+  }
+}

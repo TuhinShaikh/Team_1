@@ -1,0 +1,17 @@
+{
+  "case_id": "case-774",
+  "source_path": "Data/corpus/case-774.txt",
+  "language": "English",
+  "sector": "Healthcare",
+  "country": "Not stated",
+  "problem_plain": "PruittHealth, a post-acute provider, experienced a ~$75M revenue decline in skilled nursing facilities due to COVID-19 labour shortages, admission restrictions and inflation-driven margin pressure.",
+  "capability": "Data-centric methodology applied across three growth levers: sales effectiveness, cost optimisation, and talent acquisition and retention, including redesigned recruitment and retention programmes for RNs and CNAs.",
+  "scale_outcomes": "+4.8% revenue growth and +4.0% contribution margin growth versus engagement baseline",
+  "reusable": "Data-centric approach to growth optimisation across sales effectiveness, cost management and talent acquisition/retention in healthcare settings; recruitment and retention programme redesign for clinical staff.",
+  "summary": "Veridane applied a data-centric methodology to help PruittHealth address revenue and margin pressures from COVID-19 impacts across three growth levers. Results included +4.8% revenue growth and +4.0% contribution margin growth, outpacing the industry.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:32+00:00",
+    "reviewed_by_human": false
+  }
+}

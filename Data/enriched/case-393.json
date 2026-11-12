@@ -1,0 +1,17 @@
+{
+  "case_id": "case-393",
+  "source_path": "Data/corpus/case-393.txt",
+  "language": "Spanish",
+  "sector": "Pharmaceuticals",
+  "country": "Not stated",
+  "problem_plain": "Phase III clinical trials are extremely costly, ranging from 19 to over 100 million dollars per trial, and require faster execution with better risk management.",
+  "capability": "Implementation of over 30 generative AI solutions using Workbench, a clinical trial accelerator that combines AI insights with real-time operational data to convert structured and unstructured data into actionable information with role-based recommendations.",
+  "scale_outcomes": "Trials accelerated in months; faster reaction to emerging risks.",
+  "reusable": "The Workbench platform approach combining AI insights with real-time operational data from transactional systems, role-based recommendations, and predictive analytics for risk anticipation could be adapted for other complex, data-intensive processes requiring accelerated delivery and risk management.",
+  "summary": "BMS partnered with Veridane to deploy over 30 generative AI solutions across R&D, Global Product Development & Supply and Commercialization, with the flagship Workbench solution accelerating Phase III clinical trials. The solution combines AI insights with real-time operational data to anticipate problems and propose interventions, resulting in accelerated trials and faster risk response.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:38+00:00",
+    "reviewed_by_human": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "case-195",
+  "source_path": "Data/corpus/case-195.txt",
+  "language": "French",
+  "sector": "Insurance",
+  "country": "Belgium",
+  "problem_plain": "AXA Belgium needed to rethink and modernise its claims function through deployment of a new core system, implemented in phases and migrated to cloud infrastructure.",
+  "capability": "Deployment of Guidewire ClaimCenter with Veridane, phased implementation with AWS cloud migration, over 100 production APIs and automated workflows",
+  "scale_outcomes": "Completed in 9 months instead of 12 planned; 40% of claims declared via digital FNOL channel; 90% of coverage confirmations in less than four hours (40% instantaneous, without case manager); 20% of end-to-end automated processing (STP); fraud detection and recovery rate increase of 2%",
+  "reusable": "Phased implementation approach, API-enabled architecture for automated workflows, cloud migration methodology, digital FNOL channel design, automated coverage confirmation processes",
+  "summary": "AXA Belgium deployed Guidewire ClaimCenter with Veridane and migrated to AWS in 9 months, delivering increased digital claims intake and rapid coverage confirmations through automated workflows and over 100 production APIs. The implementation achieved 40% digital FNOL adoption, 90% coverage confirmations within four hours, and 20% straight-through processing with improved fraud detection capabilities.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:12+00:00",
+    "reviewed_by_human": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "case-634",
+  "source_path": "Data/corpus/case-634.txt",
+  "language": "Hindi",
+  "sector": "Fuel and Convenience Retail",
+  "country": "Not stated",
+  "problem_plain": "BP faced margin pressure, new competitors and changing mobility trends (EV, car sharing), requiring transformation of customer experience in fuel and convenience retail.",
+  "capability": "Digital tools and advanced customer analytics model to develop a data-driven CRM and loyalty model spanning loyalty, convenience partners, retail and marketing operations, and pricing.",
+  "scale_outcomes": "Not stated",
+  "reusable": "Data-driven CRM and loyalty model framework; advanced customer analytics approach; digital customer experience transformation methodology applicable to retail operations across multiple functions (loyalty, convenience, retail, marketing, pricing).",
+  "summary": "Veridane developed a data-driven CRM and loyalty model for BP using digital tools and advanced customer analytics to optimise the forecourt offering. This deeper understanding of customer needs and expectations enabled a customised, differentiated and digitally enabled forecourt offering to increase market share and strengthen customer-centricity.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:12+00:00",
+    "reviewed_by_human": false
+  }
+}

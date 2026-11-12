@@ -1,0 +1,17 @@
+{
+  "case_id": "case-714",
+  "source_path": "Data/corpus/case-714.txt",
+  "language": "German",
+  "sector": "Insurance",
+  "country": "Not stated",
+  "problem_plain": "UNIQA needed to adapt their ICT governance, ICT risk management and incident reporting controls to comply with the EU Digital Operational Resilience Act (DORA) within the context of existing EIOPA ICT guidelines and national requirements.",
+  "capability": "Pre-built DORA audit catalogue used to conduct gap analysis of policies, processes and control landscape; co-design workshops to develop recommendations and prioritised roadmap for documented policies, reporting and control improvements.",
+  "scale_outcomes": "Gap analysis completed within weeks; DORA compliance pathway established within 12 months after Act comes into force.",
+  "reusable": "Pre-built DORA audit catalogue and co-design workshop methodology for compliance assessment and roadmap development could be applied to other financial services organisations needing to achieve DORA compliance.",
+  "summary": "Veridane's Security Strategy & Risk Team used a pre-built DORA audit catalogue to rapidly conduct a gap analysis of UNIQA's policies, processes and controls, followed by co-design workshops to develop prioritised remediation recommendations. The engagement delivered a clear current-state analysis, transparency on control weaknesses to board level, and a structured pathway to DORA compliance within 12 months of the Act coming into force.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:19+00:00",
+    "reviewed_by_human": false
+  }
+}

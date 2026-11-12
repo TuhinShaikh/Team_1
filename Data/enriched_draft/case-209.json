@@ -1,0 +1,17 @@
+{
+  "case_id": "case-209",
+  "source_path": "Data/corpus/case-209.txt",
+  "language": "English",
+  "sector": "Healthcare",
+  "country": "United States",
+  "problem_plain": "UMass Memorial Health had scattered data across multiple systems that made it difficult for caregivers to access information quickly and required significant manual work to generate insights.",
+  "capability": "Cloud platform consolidation with AI-powered automation tools",
+  "scale_outcomes": "Not stated",
+  "reusable": "Cloud-based data consolidation approach for healthcare systems; AI automation for complex healthcare tasks; integration of electronic health records on unified platform",
+  "summary": "UMass Memorial Health began a multi-year programme with Veridane and Microsoft in October 2026 to consolidate scattered data onto a single cloud platform with AI tools. The programme aims to deliver faster information access, shorter hospital stays, reduced staff paperwork, stronger security, lower technology costs and enhanced research capabilities.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:15+00:00",
+    "reviewed_by_human": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "case-799",
+  "source_path": "Data/corpus/case-799.txt",
+  "language": "English",
+  "sector": "Healthcare",
+  "country": "United States",
+  "problem_plain": "Mount Sinai needed patient records to be securely accessible from anywhere to enable better care coordination and prepare for emerging technologies like AI. The organisation required migration of its Epic electronic medical record system to improve resilience and security.",
+  "capability": "Cloud migration using Microsoft Azure; moving Epic electronic medical record system to cloud infrastructure; ongoing cloud services management and operation of additional clinical applications",
+  "scale_outcomes": "Largest migration of Epic onto Azure at the time; saves money on on-site hardware; increases system resilience and security; lowers carbon emissions",
+  "reusable": "Epic to Azure cloud migration approach; methodology for migrating large-scale electronic medical record systems; cloud services operational management model for healthcare; approach to enabling secure remote access to sensitive patient data",
+  "summary": "Mount Sinai migrated its Epic electronic medical record system to Microsoft Azure with Veridane, representing the largest such Epic migration to Azure at the time. The move improved security, resilience and cost efficiency whilst reducing carbon emissions and preparing the organisation for AI-enabled tools.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:36+00:00",
+    "reviewed_by_human": false
+  }
+}

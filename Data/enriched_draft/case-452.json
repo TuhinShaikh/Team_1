@@ -1,0 +1,17 @@
+{
+  "case_id": "case-452",
+  "source_path": "Data/corpus/case-452.txt",
+  "language": "English",
+  "sector": "Entertainment",
+  "country": "United States",
+  "problem_plain": "A major entertainment company needed to launch an online TV and film service within only 15 months.",
+  "capability": "Bringing together people, data and technology to build and scale a streaming platform",
+  "scale_outcomes": "Nearly 34 million paying subscribers; fastest-growing of its kind in the US for two years running; handled the biggest live online broadcast in US history, reaching 32 million viewers; platform expanded to 80 countries across three continents",
+  "reusable": "Approach to rapidly assembling cross-functional teams, data infrastructure and technology architecture for launching and scaling streaming platforms under tight time constraints",
+  "summary": "Veridane assembled people, data and technology to build and launch an online TV and film service in 15 months, which became the fastest-growing of its kind in the US for two years with nearly 34 million paying subscribers. The platform handled the biggest live online broadcast in US history with 32 million viewers and has since expanded to 80 countries across three continents.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:45+00:00",
+    "reviewed_by_human": false
+  }
+}

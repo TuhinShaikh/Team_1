@@ -1,12 +1,17 @@
 
-from fastapi import FastAPI
-
-from routers import endpoints 
-
-app = FastAPI( title ="lynceus project")
+import sys
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
+
+# The hybrid search API lives in the repository root. Load its router package
+# before the older backend-local routers package with the same name.
+REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(REPOSITORY_ROOT / ".env")
+sys.path.insert(0, str(REPOSITORY_ROOT))
+from routers import endpoints, search_api
 
 app = FastAPI()
 
@@ -19,8 +24,8 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 
-# Keep your existing app.include_router(...) below.
 app.include_router(endpoints.router)
+app.include_router(search_api.router)
 
 
 

@@ -1,0 +1,17 @@
+{
+  "case_id": "case-446",
+  "source_path": "Data/corpus/case-446.txt",
+  "language": "Japanese",
+  "sector": "Insurance",
+  "country": "Japan",
+  "problem_plain": "Meiji Yasuda Life Insurance needed to transform its business through AI adoption to improve labour productivity in the face of Japan's declining and ageing population.",
+  "capability": "Generative AI and agent-based AI technologies applied to support digital transformation, including AI-powered digital assistants to enhance staff capabilities and enable personalised insurance recommendations.",
+  "scale_outcomes": "10-year plan through March 2030; 300 next-generation leaders trained in digital and AI skills",
+  "reusable": "Multi-year AI-driven business transformation approach combining technology deployment for product development and organisation-wide digital and AI talent development programmes; AI-powered digital assistant methodology for personalised customer engagement",
+  "summary": "Meiji Yasuda Life Insurance and Veriden signed a multi-year contract under the \"MY Mutual Way 2030\" plan to drive business transformation through generative AI and agent-based AI technologies through March 2030. The initiative focuses on both product development through advanced technology adoption and talent development through an organisation-wide digital and AI training programme including 300 next-generation leaders.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:42+00:00",
+    "reviewed_by_human": false
+  }
+}

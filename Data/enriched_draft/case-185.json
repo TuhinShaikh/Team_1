@@ -1,0 +1,17 @@
+{
+  "case_id": "case-185",
+  "source_path": "Data/corpus/case-185.txt",
+  "language": "Dutch",
+  "sector": "Software / Business Process Management",
+  "country": "Netherlands",
+  "problem_plain": "Blueriq's BPM software reached scalability limits in on-premises datacenters as COVID-19 drove new use cases, requiring a migration to cloud infrastructure.",
+  "capability": "Cloud migration and architectural redesign on AWS, transforming on-premises software into PaaS (Blueriq Platform) and SaaS (Blueriq Studio) offerings",
+  "scale_outcomes": "50% shorter application development time, 30% higher sales pipeline realisation, 30 new use cases for business processes",
+  "reusable": "Cloud architecture patterns for converting on-premises enterprise software to cloud-native PaaS and SaaS models; AWS migration approach for regulated industries; process modelling and application development acceleration techniques",
+  "summary": "Blueriq's BPM software was redesigned on AWS by Veridane Nederland to offer Blueriq Platform as PaaS and Blueriq Studio as SaaS, enabling regulated sector customers to deploy scalable applications safely without on-premises hardware costs. The migration resulted in 50% shorter application development time, 30% higher sales pipeline realisation, and 30 new business process use cases.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:08+00:00",
+    "reviewed_by_human": false
+  }
+}

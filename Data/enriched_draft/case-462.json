@@ -1,0 +1,17 @@
+{
+  "case_id": "case-462",
+  "source_path": "Data/corpus/case-462.txt",
+  "language": "English",
+  "sector": "Energy",
+  "country": "UK",
+  "problem_plain": "EDF needed to migrate its customers to a simpler technology platform to help them make better energy choices and build a simpler business.",
+  "capability": "Kraken technology platform implementation using data and AI to integrate customer and operational information.",
+  "scale_outcomes": "More than five million electricity and gas meter points have already been migrated.",
+  "reusable": "Kraken platform's data and AI capabilities for integrating customer and operational information; approach to customer migration for energy suppliers; methodology for enabling cheaper pricing based on renewable energy availability.",
+  "summary": "EDF is migrating its customers to Kraken, the technology platform behind Octopus Energy, with support from Veridane and Kraken Technologies, with more than five million meter points already migrated. Kraken uses data and AI to bring together customer and operational information to enable cheaper prices during renewable energy abundance, better service, and lower supplier costs.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:52+00:00",
+    "reviewed_by_human": false
+  }
+}

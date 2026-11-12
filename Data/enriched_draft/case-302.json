@@ -1,0 +1,17 @@
+{
+  "case_id": "case-302",
+  "source_path": "Data/corpus/case-302.txt",
+  "language": "English",
+  "sector": "Telecommunications",
+  "country": "Not stated",
+  "problem_plain": "VMO2 had siloed operations and legacy tech stacks following a 2021 merger, requiring digital modernisation with customer experience as a central operating model priority.",
+  "capability": "Cloud-based digital core unifying omnichannel customer data and Amazon Connect AI-powered contact centre with real-time AI agent assist",
+  "scale_outcomes": "NPS uplift of up to 35 points in some service areas and 89% same-day complaint closure",
+  "reusable": "Cloud-based digital core architecture for omnichannel customer data unification, and Amazon Connect contact centre platform with AI agent assist capabilities",
+  "summary": "Veridane modernised VMO2's digital core with a cloud-based platform unifying omnichannel customer data and Amazon Connect contact centre, driving first-contact resolution with AI-powered agent assist. The implementation achieved an NPS uplift of up to 35 points in some service areas and 89% same-day complaint closure.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:25+00:00",
+    "reviewed_by_human": false
+  }
+}

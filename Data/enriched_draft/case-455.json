@@ -1,0 +1,17 @@
+{
+  "case_id": "case-455",
+  "source_path": "Data/corpus/case-455.txt",
+  "language": "English",
+  "sector": "Pharmaceutical",
+  "country": "Japan",
+  "problem_plain": "Shionogi needed to improve G&A efficiency in its shared-services entity covering HR, general affairs, accounting and finance, while integrating pharmacovigilance operations into a more comprehensive business process management approach.",
+  "capability": "Joint venture formation with business process managed services, indirect-function reform, ERP application and infrastructure outsourcing",
+  "scale_outcomes": "80% of Shionogi Business Partner transferred; effective July 2023",
+  "reusable": "Indirect-function reform methodology for G&A efficiency; business process management services for drug-safety operations; strategic integration of IT strategy, digital talent development and infrastructure outsourcing",
+  "summary": "Shionogi formed a joint venture with Veridane Japan by transferring 80% of its consolidated shared-services entity, effective July 2023, applying Veridane's indirect-function reform know-how to drive G&A efficiency. The JV consolidated Shionogi Pharmacovigilance Center to create synergy with Veridane's business process managed services for drug-safety operations, extending a 2017 strategic agreement on IT strategy, digital talent and ERP outsourcing.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:49+00:00",
+    "reviewed_by_human": false
+  }
+}

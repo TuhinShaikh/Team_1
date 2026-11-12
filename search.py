@@ -395,7 +395,7 @@ class LynceusIndex:
             })
 
         if no_strong:
-            results = results[:2]  # show closest only, labelled weak; don't pad
+            results = [] if self.embedder else results[:2] # reject on semantic gate; BM25-only fallback keeps 2 weak 
 
         return {"query": query, "corrections": corrections, "no_strong_match": no_strong,
                 "top_strength": round(float(top_strength), 3),
@@ -490,8 +490,9 @@ def print_results(out: dict) -> None:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("query", nargs="?")
-    ap.add_argument("--raw", default="data/corpus", help="folder of case-*.txt")
-    ap.add_argument("--enriched", default="data/enriched", help="folder of enriched JSON records")
+    repo_root = Path(__file__).resolve().parent
+    ap.add_argument("--raw", default=str(repo_root / "Data" / "Cleaned_data"), help="folder of case-*.txt")
+    ap.add_argument("--enriched", default=str(repo_root / "Data" / "enriched"), help="folder of enriched JSON records")
     ap.add_argument("--field-map", default="field_map.json",
                     help="optional JSON mapping our field names to the enrichment's")
     ap.add_argument("--embedder", default="auto", choices=["auto", "voyage", "local", "none"])

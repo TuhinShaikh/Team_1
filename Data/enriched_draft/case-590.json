@@ -1,0 +1,17 @@
+{
+  "case_id": "case-590",
+  "source_path": "Data/corpus/case-590.txt",
+  "language": "English",
+  "sector": "Pharmaceuticals",
+  "country": "Switzerland",
+  "problem_plain": "Novartis had data scattered across old systems and separate teams, preventing faster discovery and delivery of treatments at lower cost.",
+  "capability": "Cloud-based data and analytics platform that integrates information from research, clinical development, operations and sales",
+  "scale_outcomes": "Not stated",
+  "reusable": "Cloud-based data consolidation and analytics platform approach for integrating disparate enterprise systems to enable cross-functional insights and support advanced analytics use cases such as personalised medicine and cell and gene therapies",
+  "summary": "Novartis partnered with Veridane to build a cloud-based data and analytics platform that unified information across research, clinical development, operations and sales. The platform enables teams to work from the same data, obtain insights faster, and prepare for data-intensive areas including personalised medicine and cell and gene therapies, and has won a Gartner award.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:05+00:00",
+    "reviewed_by_human": false
+  }
+}

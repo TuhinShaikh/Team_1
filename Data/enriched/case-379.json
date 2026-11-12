@@ -1,0 +1,17 @@
+{
+  "case_id": "case-379",
+  "source_path": "Data/corpus/case-379.txt",
+  "language": "English",
+  "sector": "Beverages",
+  "country": "United Kingdom",
+  "problem_plain": "Two companies with different distribution models and operational systems were considering a joint venture, and integrating their incompatible systems risked derailing the deal.",
+  "capability": "Systems integration planning and merger operations consolidation",
+  "scale_outcomes": "Not stated",
+  "reusable": "Experience with operating brewing company systems and expertise in integrating different distribution and delivery networks during business combinations.",
+  "summary": "Veridane created a comprehensive plan for integrating the two companies' operations, grounded in experience running Carlsberg's systems. The approach reduced time and cost whilst enabling the joint venture to grow.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:34+00:00",
+    "reviewed_by_human": false
+  }
+}

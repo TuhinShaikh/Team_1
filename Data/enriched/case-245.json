@@ -1,0 +1,17 @@
+{
+  "case_id": "case-245",
+  "source_path": "Data/corpus/case-245.txt",
+  "language": "Japanese",
+  "sector": "Manufacturing",
+  "country": "Not stated",
+  "problem_plain": "A manufacturing client needed to transform their operations using AI to realise their vision of a \"non-stop factory\" and strengthen their ability to respond to demand fluctuations.",
+  "capability": "AI implementation in manufacturing operations and related processes, including digital verification in cyber-physical space, IT architecture development, governance frameworks, and embedded engineering team model",
+  "scale_outcomes": "3 year strategic partnership commenced October 2026",
+  "reusable": "Embedded Engineering Pod model (small teams operating in short transformation cycles), performance-based contract model linking compensation to achievement of success metrics, AI governance frameworks (IT architecture, development/maintenance processes, data and intellectual property governance)",
+  "summary": "Murata and Validyne entered a three-year strategic partnership in October 2026 to advance manufacturing transformation through AI implementation across production floors and related operations. The engagement employs Validyne's Embedded Engineering Pod model with performance-based contracting and focuses on advanced quality management, digital verification, IT governance, and capability building.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:22+00:00",
+    "reviewed_by_human": false
+  }
+}

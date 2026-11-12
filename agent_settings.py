@@ -8,7 +8,7 @@ It allows agent to use two tools:
 """
 
 from routers.search_api import index as search_index
-from llm import MODEL,client
+from llm import MODEL, get_client
 
 
 # agent system prompt 
@@ -54,7 +54,7 @@ def ask_with_tools(question:str) -> dict:
 
     #the loop 
     for _ in range(MAX_ITERATIONS):
-        response = client.messages.create(
+        response = get_client().messages.create(
                     model=MODEL,
                     max_tokens=600,
                     system=AGENT_SYSTEM_PROMPT,

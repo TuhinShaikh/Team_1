@@ -1,0 +1,17 @@
+{
+  "case_id": "case-480",
+  "source_path": "Data/corpus/case-480.txt",
+  "language": "English",
+  "sector": "Aerospace and Defence",
+  "country": "Not stated",
+  "problem_plain": "Leonardo's Helicopter Division relied on paper-based, manual aftersales ordering through a platform that covered only a subset of services. They needed a comprehensive, modern solution to replace this fragmented approach.",
+  "capability": "Design-to-implementation of an omnichannel CX ecosystem comprising two synergistic systems, including a customer portal built on Microsoft Dynamics 365 with service ticketing, technical support, interactive dashboards, video tutorials, business accounts management, publications library and asset management capabilities.",
+  "scale_outcomes": "Available 24/7 on desktop and mobile across all Leonardo divisions; lifting customer satisfaction",
+  "reusable": "Omnichannel CX ecosystem architecture using SAP and Microsoft Dynamics 365 for aftersales management, scalable across multiple business divisions; best-of-breed platform design for service ticketing, technical support, dashboards, and asset management.",
+  "summary": "Veridane, with SAP and Microsoft, implemented an omnichannel CX ecosystem for Leonardo's Helicopter Division, replacing paper-based ordering with a Microsoft Dynamics 365 customer portal offering single-entry-point access to aftersales services. The 24/7 platform is built to scale across all Leonardo divisions and is lifting customer satisfaction.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:55+00:00",
+    "reviewed_by_human": false
+  }
+}

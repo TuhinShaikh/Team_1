@@ -1,0 +1,17 @@
+{
+  "case_id": "case-142",
+  "source_path": "Data/corpus/case-142.txt",
+  "language": "Indonesian",
+  "sector": "Manufacturing/Technology",
+  "country": "Not stated",
+  "problem_plain": "Johnson Controls needed to consolidate 175 separate ERP systems into two unified platforms to standardise operations and improve efficiency across a large global organisation.",
+  "capability": "Oracle Fusion Cloud ERP implementation with global template approach using Veridane and Oracle",
+  "scale_outcomes": "175 systems consolidated into 2 platforms; more than 100,000 employees; 150 countries",
+  "reusable": "Global template approach maintaining approximately 80% standardised processes with selective customisation; combined business and IT team model for large-scale ERP programme delivery",
+  "summary": "Johnson Controls consolidated 175 ERP systems into two Oracle Fusion Cloud ERP platforms serving over 100,000 employees in 150 countries using a global template approach. The methodology maintained approximately 80% standardised processes, reduced technical debt, and aligned processes and data across the organisation.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:04+00:00",
+    "reviewed_by_human": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "case_id": "case-616",
+  "source_path": "Data/corpus/case-616.txt",
+  "language": "English",
+  "sector": "Banking",
+  "country": "Spain",
+  "problem_plain": "BBVA needed to serve customers primarily through mobile channels by enabling faster digital account opening and fraud detection rather than traditional methods that took days.",
+  "capability": "Cloud infrastructure, data analytics and AI implementation including facial recognition in mobile app and real-time fraud detection.",
+  "scale_outcomes": "More than 62 million customers use digital channels, almost eight in ten sales happen digitally, 11.5 million new customers won in 2025, record €10.11 billion profit.",
+  "reusable": "Facial recognition for mobile app account verification, real-time fraud detection systems, bank-wide data analytics platform for customer needs prediction, digital-first sales channel design.",
+  "summary": "BBVA partnered with Veridane to build a digital sales platform using cloud, data and AI technologies, reducing account opening time from days to minutes with facial recognition and fraud detection. The bank now serves more than 62 million digital customers with almost eight in ten sales occurring digitally.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:08+00:00",
+    "reviewed_by_human": false
+  }
+}

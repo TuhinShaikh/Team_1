@@ -9,10 +9,11 @@ from pydantic import BaseModel, Field
 
 from search import LynceusIndex, get_embedder, load_field_map, load_records
 
-CORPUS_DIR = os.getenv("LYNCEUS_CORPUS", "../Data/Cleaned_data")
-ENRICHED_DIR = os.getenv("LYNCEUS_ENRICHED", "data/enriched")
-FIELD_MAP = os.getenv("LYNCEUS_FIELD_MAP", "field_map.json")
-TEST_SET = os.getenv("LYNCEUS_TEST_SET", "evaluation/test_set.json")
+ROOT = Path(__file__).resolve().parents[1]
+CORPUS_DIR = os.getenv("LYNCEUS_CORPUS", str(ROOT / "Data" / "Cleaned_data"))
+ENRICHED_DIR = os.getenv("LYNCEUS_ENRICHED", str(ROOT / "Data" / "enriched"))
+FIELD_MAP = os.getenv("LYNCEUS_FIELD_MAP", str(ROOT / "field_map.json"))
+TEST_SET = os.getenv("LYNCEUS_TEST_SET", str(ROOT / "evaluation" / "test_set.json"))
 
 # All routes live under /api, which is where the frontend calls them.
 router = APIRouter(prefix="/api", tags=["search"])
@@ -31,7 +32,8 @@ def index() -> LynceusIndex:
 
 def normalise_case_id(raw: str) -> str:
     """Accept '746', 'case-746', 'CASE-746', 'case_746' or 'case-746.txt'."""
-    s = raw.strip().lower()
+    dash_chars = "‐‑‒–—―−"
+    s = raw.strip().lower().translate(str.maketrans({char: "-" for char in dash_chars}))
     if s.endswith(".txt"):
         s = s[:-4]
     s = s.replace("_", "-").replace(" ", "-")
@@ -46,11 +48,25 @@ def _record(case_id: str):
     raise HTTPException(status_code=404, detail=f"{case_id} not found")
 
 
+def _enrichment_files(case_id: str) -> tuple[dict | None, dict | None]:
+    active_dir = Path(ENRICHED_DIR)
+    draft_dir = active_dir.parent / f"{active_dir.name}_draft"
+
+    def read(path: Path) -> dict | None:
+        if not path.exists():
+            return None
+        try:
+            return json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return None
+
+    return read(active_dir / f"{case_id}.json"), read(draft_dir / f"{case_id}.json")
+
+
 ENRICHMENT_FIELDS = ("language", "sector", "country", "problem_plain",
                      "capability", "scale_outcomes", "reusable")
-NO_MATCH_MESSAGE = ("No strong match found. The closest entries are shown below, "
-                    "marked as weak matches.")
-
+NO_MATCH_MESSAGE = ("No strong match found in past deliveries for this question. "
+                    "Try rephrasing, or this may be new work for us.")
 
 class SearchRequest(BaseModel):
     query: str = Field(..., min_length=3, description="The lead's need in plain English")
@@ -64,8 +80,12 @@ def _for_frontend(out: dict) -> dict:
     results = []
     for res in out["results"]:
         rec = by_id[res["case_id"]]
+        active_record, _ = _enrichment_files(rec.case_id)
+        agent_meta = (active_record or {}).get("_agent", {})
         results.append({
             "case_id": res["case_id"],
+            "enriched": bool(rec.fields),
+            "reviewed_by_human": bool(agent_meta.get("reviewed_by_human", False)),
             "rank": res["rank"],
             "score": res["score"],
             "similarity": res["similarity"],
@@ -113,10 +133,12 @@ def list_cases():
 def get_case(case_id: str):
     """The source entry: original text plus its enrichment, for tracing claims."""
     r = _record(case_id)
+    enrichment, draft = _enrichment_files(r.case_id)
     return {"case_id": r.case_id,
             "source_file": Path(r.source_path).name,
             "text": r.raw_text,
-            "enrichment": r.fields or None}
+            "enrichment": enrichment,
+            "draft": draft}
 
 
 @router.get("/cases/{case_id}/similar")

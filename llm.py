@@ -2,7 +2,7 @@
 
 analyse_case() turns one raw case into a structured English record that
 matches the search's enrichment fields. Save it with save_enrichment() and
-search.py picks it up from data/enriched/ on the next /api/reindex.
+search.py picks it up from Data/enriched/ on the next /api/reindex.
 
 Every record is an agent DRAFT: a person must check it against the source
 before it counts as reviewed (brief: spot-check at least 10, keep both).
@@ -21,11 +21,18 @@ MODEL = "claude-haiku-4-5-20251001"
 # SDK defaults are 2 retries and a 600 s timeout; overridden here as a decision.
 # getenv (not environ[...]) so the server still starts without a key and only
 # the LLM features fail.
-client = anthropic.Anthropic(
-    api_key=os.getenv("ANTHROPIC_API_KEY"),
-    timeout=30.0,
-    max_retries=3,
-)
+_client = None
+
+
+def get_client():
+    """Load the Anthropic client only when an AI feature is requested."""
+    global _client
+    if _client is None:
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            raise RuntimeError("ANTHROPIC_API_KEY is required for AI features.")
+        _client = anthropic.Anthropic(api_key=api_key, timeout=30.0, max_retries=3)
+    return _client
 
 # Rules go in the system prompt; data goes in the user message.
 SYSTEM_PROMPT = (
@@ -69,7 +76,7 @@ def build_prompt(case_id: str, text: str) -> str:
 
 def analyse_case(case_id: str, text: str) -> dict:
     """Structured output, validated against CaseAnalysis, or it raises."""
-    response = client.messages.create(
+    response = get_client().messages.create(
         model=MODEL,
         max_tokens=800,
         system=SYSTEM_PROMPT,
@@ -90,22 +97,24 @@ def analyse_case(case_id: str, text: str) -> dict:
     }
 
 
-def save_enrichment(result: dict, source_path: str, out_dir: str = "data/enriched") -> Path:
+def save_enrichment(result: dict, source_path: str, out_dir: str = "Data/enriched") -> Path:
     """Write the record in the shape search.py reads (one JSON per case).
-    Also keeps an untouched copy in data/enriched_draft/ so the human-corrected
+    Also keeps an untouched copy in Data/enriched_draft/ so the human-corrected
     version can be shown side by side with the agent's draft."""
     record = {"case_id": result["case_id"], "source_path": source_path,
               **result["analysis"],
               "_agent": {"model": result["model"],
                          "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                          "reviewed_by_human": False}}
-    for folder in (out_dir, "data/enriched_draft"):
+    active_dir = Path(out_dir)
+    draft_dir = active_dir.parent / f"{active_dir.name}_draft"
+    for folder in (active_dir, draft_dir):
         Path(folder).mkdir(parents=True, exist_ok=True)
         path = Path(folder) / f"{result['case_id']}.json"
-        if folder == out_dir and path.exists():
+        if folder == active_dir and path.exists():
             continue  # never overwrite a record a person may already have corrected
         path.write_text(json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8")
-    return Path(out_dir) / f"{result['case_id']}.json"
+    return active_dir / f"{result['case_id']}.json"
 
 
 if __name__ == "__main__":

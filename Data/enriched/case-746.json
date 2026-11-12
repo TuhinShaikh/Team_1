@@ -1,0 +1,17 @@
+{
+  "case_id": "case-746",
+  "source_path": "Data/corpus/case-746.txt",
+  "language": "English",
+  "sector": "Fisheries",
+  "country": "EU",
+  "problem_plain": "DG MARE needed to migrate siloed fisheries applications covering vessel geolocation and catch declarations from 27 EU member states and third countries to AWS and consolidate them into a unified platform, whilst refactoring 2,000+ legacy data-validation rules for cloud-native services.",
+  "capability": "LLM-based code-generation tool grounded in existing codebase and documentation",
+  "scale_outcomes": "2,000+ data-validation rules; estimated 12,000 person-days manual effort; each rule refactored in ~1 minute at ~90% accuracy; 27 EU member states and third countries",
+  "reusable": "LLM-based code-generation approach for legacy business rule refactoring in cloud migrations; human-in-the-loop validation pattern; grounding technique using existing codebase and documentation",
+  "summary": "Veridane's Public Service Data & AI Studio built an LLM-based code-generation tool that refactors DG MARE's 2,000+ fisheries data-validation rules in ~1 minute at ~90% accuracy with human-in-the-loop validation, replacing an estimated 12,000 person-days of manual effort. The tool accelerates consolidation of vessel geolocation and catch declaration applications from 27 EU member states and third countries onto AWS and the Ocean Store unified data platform for IUU fishing enforcement.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:23+00:00",
+    "reviewed_by_human": false
+  }
+}

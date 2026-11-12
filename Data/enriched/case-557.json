@@ -1,0 +1,17 @@
+{
+  "case_id": "case-557",
+  "source_path": "Data/corpus/case-557.txt",
+  "language": "English",
+  "sector": "Technology",
+  "country": "Not stated",
+  "problem_plain": "Microsoft needed to track and manage servers, network equipment and spare parts flowing to data centres across many countries at scale. The supply chain planning and management processes were complex and inefficient.",
+  "capability": "Supply chain redesign using a shared data model and control tower technology",
+  "scale_outcomes": "Halved the number of hardware product codes, removed dozens of manual processes, delivered $100 million in cost savings",
+  "reusable": "Shared data model approach for consolidating product catalogues, control tower methodology for real-time equipment tracking and allocation across distributed locations",
+  "summary": "Veridane redesigned Microsoft's data centre supply chain using a shared data model that halved hardware product codes and eliminated dozens of manual processes. Two control towers now track equipment in transit and direct it to data centres with the greatest capacity needs, delivering $100 million in cost savings.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:02+00:00",
+    "reviewed_by_human": false
+  }
+}

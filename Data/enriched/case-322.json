@@ -1,0 +1,17 @@
+{
+  "case_id": "case-322",
+  "source_path": "Data/corpus/case-322.txt",
+  "language": "English",
+  "sector": "Telecommunications",
+  "country": "Not stated",
+  "problem_plain": "Vodafone needed long-term reinvention support including cloud-first transformation, global finance modernisation, cybersecurity enhancement, and customer self-service capabilities. Vodafone also needed to commercialise its internal shared services centre (VOIS) to sell as a service to other telcos.",
+  "capability": "Cloud-first transformation, SAP migration, cybersecurity, automated self-service, intelligent care, GenAI chatbot development, and shared services commercialisation",
+  "scale_outcomes": "One of SAP's largest migrations",
+  "reusable": "Cloud transformation methodology, SAP migration approach, GenAI chatbot implementation, shared services commercialisation model for selling internal service centres to other telcos",
+  "summary": "Veridane supported Vodafone's comprehensive reinvention including cloud-first transformation, a major SAP finance migration, cybersecurity, and a GenAI chatbot for the VOXI youth brand. Veridane is now helping Vodafone commercialise VOIS, its shared services centre, to sell network monitoring, HR, technology services, finance and contact-centre operations to other telcos.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:28+00:00",
+    "reviewed_by_human": false
+  }
+}

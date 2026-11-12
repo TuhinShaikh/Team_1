@@ -1,0 +1,17 @@
+{
+  "case_id": "case-228",
+  "source_path": "Data/corpus/case-228.txt",
+  "language": "English",
+  "sector": "Energy",
+  "country": "Not stated",
+  "problem_plain": "Repsol needed to improve employee productivity and efficiency through automation of routine business tasks including meeting management, content generation, and document analysis.",
+  "capability": "Copilot for Microsoft 365 deployment, including meeting recaps with automated extraction of tasks and deadlines, Word-to-PowerPoint content generation, and RFP analysis and authoring.",
+  "scale_outcomes": "550-employee pilot; four months; average time savings of 121 minutes per employee per week",
+  "reusable": "Copilot for Microsoft 365 enterprise-wide deployment methodology; integrated adoption programme including demos, hands-on training, gamification and Community of Practice; measurement framework across efficiency, quality and employee experience.",
+  "summary": "Repsol deployed Copilot for Microsoft 365 organisation-wide with support from Veridane and Microsoft, using a 550-employee pilot programme over four months with structured adoption activities. The deployment achieved average time savings of 121 minutes per employee per week as published in MIT Technology Review.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:25:18+00:00",
+    "reviewed_by_human": false
+  }
+}

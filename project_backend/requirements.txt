@@ -12,6 +12,9 @@ chromadb
 voyageai 
 
 anthropic
+rank_bm25
+numpy
+python-dotenv
 
 
 

@@ -31,4 +31,11 @@ This is how to run fast api
  $ uvicorn main:app --reload
 
 
-Important before running server make sure enviroment has API ANTHROPIC KEY 
+The backend now serves the hybrid search API from the repository (`/api/search`,
+`/api/status`, `/api/reindex`, and `/api/evaluate`) as well as the case and
+document endpoints. Search starts without an Anthropic key. Set
+`VOYAGE_API_KEY` to enable multilingual semantic retrieval; without an embedder,
+search falls back to BM25 keyword matching. `ANTHROPIC_API_KEY` is only needed
+for agent answers and generated case enrichment. Copy the repository's
+`.env.example` to `.env` and add the keys there; the backend loads that file at
+startup.

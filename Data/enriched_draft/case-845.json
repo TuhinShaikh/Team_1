@@ -1,0 +1,17 @@
+{
+  "case_id": "case-845",
+  "source_path": "Data/corpus/case-845.txt",
+  "language": "English",
+  "sector": "Financial Services",
+  "country": "Australia",
+  "problem_plain": "CBA needed to replace its legacy core banking system to support continued growth and modernisation rather than extend existing infrastructure.",
+  "capability": "Cloud-based core banking platform built on SAP Transaction Banking (TRBK) on AWS with controlled incremental cutover, built-in automation, rapid-recovery safeguards, and event streaming for real-time visibility.",
+  "scale_outcomes": "70M+ daily transactions; ~30% faster performance; ~30% lower daily run costs",
+  "reusable": "Controlled incremental change methodology as alternative to big-bang cutover; built-in automation and rapid-recovery safeguards; event streaming architecture for real-time visibility; end-to-end service ownership model.",
+  "summary": "CBA replaced its legacy core banking system with a cloud-based SAP Transaction Banking platform on AWS, supporting approximately 40% of Australia's payments. The delivery achieved minimal customer disruption at 70M+ daily transactions whilst delivering ~30% faster performance and ~30% lower daily run costs through controlled incremental change and real-time visibility.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:39+00:00",
+    "reviewed_by_human": false
+  }
+}

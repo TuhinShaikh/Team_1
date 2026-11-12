@@ -1,0 +1,17 @@
+{
+  "case_id": "case-750",
+  "source_path": "Data/corpus/case-750.txt",
+  "language": "English",
+  "sector": "Energy",
+  "country": "Italy",
+  "problem_plain": "Eni needed to move more of its technology to cloud infrastructure and manage its IT systems and telecoms more effectively to support its energy transition.",
+  "capability": "Cloud migration (hybrid private and public cloud), IT systems management, telecoms management, hosted infrastructure in advanced data centre with supercomputing capability",
+  "scale_outcomes": "More than 30 years of partnership; hosted in one of the largest data centres in the industry with one of the most powerful supercomputers outside government",
+  "reusable": "Hybrid cloud migration approach; large-scale data centre hosting and supercomputing infrastructure; IT and telecoms management for energy sector organisations",
+  "summary": "Veridane has worked with Eni for more than 30 years to help the Italian energy company move its technology to hybrid cloud and manage its IT systems and telecoms through the Eni Green Data Center. This infrastructure enables Eni to make better use of its data for energy resource exploration and future energy development whilst supporting faster adoption of new processes aligned with cleaner energy goals.",
+  "_agent": {
+    "model": "claude-haiku-4-5-20251001",
+    "generated_at": "2026-11-11T15:26:26+00:00",
+    "reviewed_by_human": false
+  }
+}
